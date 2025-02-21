@@ -170,3 +170,29 @@ input[type="text"]{
     opacity: .7;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+    .left-section, .right-section {
+        flex: none;
+        width: 90%;
+        padding: 20px;
+    }
+    .right-section {
+        padding: 20px;
+        display: none;
+    }
+    #form-sec {
+        width: 80%;
+        padding: 0 20px;
+    }
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .button-container input {
+        width: 100%;
+    }
+}
