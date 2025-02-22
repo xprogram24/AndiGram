@@ -55,7 +55,16 @@ body {
     padding: 0 40px;
     width: 80%;
 }
-
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    
+    width: 20px;
+    height: auto;
+    border-radius: 100%;
+}
 h1{
     text-align: center;
     font-size: 1.7em;
@@ -72,7 +81,8 @@ p{
 .input-container{
     display: flex;
     flex-direction: column;
-    margin-top: 20px ;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 label{
     margin-bottom: 7px;
@@ -90,6 +100,7 @@ input[type="text"]{
     padding: 10px;
     border: solid 1px  rgb(206, 205, 205);
     border-radius: 10px;
+    
 }
 /*input[type="email"]::placeholder{
     margin: 3px;
@@ -117,6 +128,7 @@ input[type="text"]{
 }
 .submit-container{
     margin-top: 10px;
+   
 }
 .submit-container input{
    background: #316cff;
@@ -171,6 +183,16 @@ input[type="text"]{
     background: none;
     cursor: pointer;
     font-weight: 600;
+}
+/*go back button for forgot button*/
+#go-back{
+    outline: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    
+    font-weight: 500;
+    color: rgb(151, 150, 150);
 }
 
 #email-error,#password-error,#name-error,#confirm-password-error{
