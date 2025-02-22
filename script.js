@@ -9,7 +9,7 @@ button.addEventListener('click' , function(event){
     event.preventDefault()
 
     if(inputContainer && passwordContainer){
-        inputContainer.remove()
+        inputContainer.remove() 
         passwordContainer.remove()
         inputContainer = null;
         passwordContainer = null;
@@ -118,4 +118,17 @@ submit.addEventListener('click', function(e){
     }
 
 
+})
+
+let signbutton = document.getElementById('signup-bottom')
+let signbutton2 = document.getElementById('signup-bottom2')
+
+signbutton.addEventListener('click', function(){
+    alert(`currently under development`)
+
+})
+
+signbutton2.addEventListener('click', function(){
+    alert(`currently under development`)
+    
 })
