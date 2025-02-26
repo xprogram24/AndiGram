@@ -9,7 +9,7 @@ body {
 }
 .container{
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
     align-items: center;
     height: 110vh;
@@ -25,6 +25,7 @@ body {
     background-color: white;
     padding: 20px;
     max-height: 1200px;
+    max-width: 500px;
     flex-direction: column;
     border-radius: 5px;
 }
@@ -33,6 +34,7 @@ body {
     background: #316cff;
     color: white;
     padding: 40px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
