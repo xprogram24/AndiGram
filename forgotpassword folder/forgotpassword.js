@@ -5,9 +5,11 @@ let forgotemail = document.getElementById('forgotemail');
 let labelemail = document.querySelector('label[for="forgotemail"]'); // Get the correct label
 let emailerror = document.getElementById('forgotemail-error');
 let p = document.querySelector('.dont-forgotemail'); // Get the first matching element
-
+let otpcontainer  =null;
 forgotpassword.addEventListener('click', function(e) {
     e.preventDefault();
+
+    
 
     emailerror.textContent = '';
     let valid = true;
@@ -51,7 +53,13 @@ forgotpassword.addEventListener('click', function(e) {
     }
 
     // Create OTP container
-    let otpcontainer = document.createElement('div');
+   
+
+    if (otpcontainer) {
+        otpcontainer.remove()
+    
+    }
+    otpcontainer = document.createElement('div')
     otpcontainer.classList.add('otpfield');
 
     // Generate 4 OTP inputs
@@ -69,6 +77,10 @@ forgotpassword.addEventListener('click', function(e) {
     form.appendChild(otpcontainer)
     // Insert OTP container before the button
     form.insertBefore(otpcontainer, otpbutton);
+
+    // add the otp validation
+
+    
 }
 
 
