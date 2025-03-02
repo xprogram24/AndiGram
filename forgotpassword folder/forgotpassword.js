@@ -118,12 +118,15 @@ submit.addEventListener('click', function(e){
     if(valid ){
         if (password.value == userPassword && email.value == usersEmail) {
             
-            window.location.href = "dashboard/andigram.html";
+            
 
 
         }
         else{
             alert('email or password incorrect')
+            window.location.href = "../dashboard/andigram.html"; // Go up one level first
+
+
             form.reset()
         }
        
