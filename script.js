@@ -5,6 +5,9 @@ let button = document.getElementById('sign')
 let inputContainer = null;
 let passwordContainer = null;
 
+let usersEmail =  'test@gmail.com'
+let userPassword =  'test123'
+
 button.addEventListener('click' , function(event){
     event.preventDefault()
 
@@ -112,9 +115,12 @@ submit.addEventListener('click', function(e){
         valid = false
 
     }
-    if(valid){
-        alert( `succesfully submitted`)
-        form.reset()
+    if(valid ){
+        if (password.value == userPassword && email.value == usersEmail) {
+            alert( `login succesfull`)
+            window.location.assign("andigram.html");
+        }
+       
     }
 
 
@@ -125,6 +131,7 @@ let signbutton2 = document.getElementById('signup-bottom2')
 
 signbutton.addEventListener('click', function(){
     alert(`currently under development`)
+    
 
 })
 
