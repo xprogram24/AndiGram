@@ -1,87 +1,147 @@
-let form = document.getElementById('form-sec');
-let forgotpassword = document.getElementById('reset-password');
-let otpbutton = document.getElementById('submit-button')
-let forgotemail = document.getElementById('forgotemail');
-let labelemail = document.querySelector('label[for="forgotemail"]'); // Get the correct label
-let emailerror = document.getElementById('forgotemail-error');
-let p = document.querySelector('.dont-forgotemail'); // Get the first matching element
-let otpcontainer  =null;
-forgotpassword.addEventListener('click', function(e) {
-    e.preventDefault();
 
+
+let form = document.getElementById('form-sec')
+let button = document.getElementById('sign')
+let inputContainer = null;
+let passwordContainer = null;
+
+let usersEmail =  'test@gmail.com'
+let userPassword =  'test123'
+
+button.addEventListener('click' , function(event){
+    event.preventDefault()
+
+    if(inputContainer && passwordContainer){
+        inputContainer.remove() 
+        passwordContainer.remove()
+        inputContainer = null;
+        passwordContainer = null;
+        return;
+    }
+//creatin the div
+inputContainer = document.createElement('div')
+inputContainer.classList.add('input-container')
+
+const label = document.createElement('label')
+label.setAttribute('for', 'Fullname')
+label.textContent='Fullname'
+
+//CREATE input field
+const input = document.createElement('input')
+input.id = 'Fullname';
+input.type  = 'text'
+input.placeholder = "enter your Full name";
+
+// Create the error message span
+const errorSpan = document.createElement('span');
+errorSpan.id = 'name-error';
+
+
+inputContainer.appendChild(label)
+inputContainer.appendChild(input)
+inputContainer.appendChild(errorSpan)
+
+const emailfield = document.getElementById('email').parentNode
+form.insertBefore(inputContainer,emailfield)
+
+
+//input 2 for confrim password
+
+passwordContainer = document.createElement('div')
+passwordContainer.classList.add('input-container')
+
+//confirm password label
+const passwordLabel = document.createElement('label')
+passwordLabel.setAttribute('for', 'confirm-password')
+passwordLabel.textContent = 'confrim Password'
+
+//confrm you password
+const confrimpasswordInput = document.createElement('input')
+confrimpasswordInput.id = 'confirm-password'
+confrimpasswordInput.type = 'password'
+confrimpasswordInput.placeholder = 'retype password'
+
+//confirm password sapn section
+const confirmPassworSpan = document.createElement('span')
+confirmPassworSpan.id = 'confirm-password-error'
+
+passwordContainer.appendChild(passwordLabel)
+passwordContainer.appendChild(confrimpasswordInput)
+passwordContainer.appendChild(confirmPassworSpan)
+
+
+const passwordField = document.getElementById('password').parentNode
+passwordField.insertAdjacentElement('afterend',passwordContainer)
+
+
+
+let header = document.querySelector('h1')
+header.innerText = 'Sign up'
+
+button.innerText = 'Sign in'
+
+})
+
+
+
+let submit = document.getElementById('submit')
+submit.addEventListener('click', function(e){
+    e.preventDefault()
+
+    let email = document.getElementById('email')
+    let password = document.getElementById('password')
     
+    let emailerror = document.getElementById('email-error')
+    let passworderror = document.getElementById('password-error')
 
-    emailerror.textContent = '';
+
+    emailerror.textContent = ''
+    passworderror.textContent = ''
+
     let valid = true;
-
-    if (forgotemail.value === "") {
-        emailerror.innerText = 'Empty field';
+    if (email.value == ' ' || password.value === '') {
+        emailerror.innerText = 'empty field'
+        passworderror.innerText = 'empty field'
         return;
     }
 
-    if (!forgotemail.value.includes('@') || 
-        !forgotemail.value.includes('.') || 
-        forgotemail.value.indexOf('@') === 0 || 
-        forgotemail.value.lastIndexOf('.') < forgotemail.value.indexOf('@')) {
+    if (!email.value.includes('@') || !email.value.includes('.') || email.value.indexOf('@') === 0 || email.value.lastIndexOf('.')< email.value.indexOf('@')) {
+        emailerror.innerText = 'invalid format'
+        valid = false ;
         
-        emailerror.innerText = 'Invalid email format';
-        valid = false;
+    }
+    if(password.value.length < 6){
+        passworderror.innerText = 'pasword must be 6 charachter long'
+        valid = false
+
+    }
+    if(valid ){
+        if (password.value == userPassword && email.value == usersEmail) {
+            
+            window.location.href = "dashboard/andigram.html";
+
+
+        }
+        else{
+            alert('email or password incorrect')
+            form.reset()
+        }
+       
     }
 
-    if (valid) {
-    // Remove existing elements
-    forgotemail.remove();
-    emailerror.remove();
-    if (labelemail) labelemail.remove();
 
-    // Change heading text
-    let h1 = document.querySelector('h1');
-    h1.innerText = 'Reset OTP';
+})
 
-    let p1 = document.getElementById('p1');
-    p1.innerText = 'Your OTP has been sent to ' + forgotemail.value;
+let signbutton = document.getElementById('signup-bottom')
+let signbutton2 = document.getElementById('signup-bottom2')
 
-    forgotpassword.value = 'continue'
-
-    // Check if form and forgotpassword exist
-    console.log(form);  // Debugging
-    console.log(forgotpassword);  // Debugging
-
-    if (!form || !forgotpassword) {
-        console.error("Form or forgotpassword button not found!");
-        return;
-    }
-
-    // Create OTP container
-   
-
-    if (otpcontainer) {
-        otpcontainer.remove()
+signbutton.addEventListener('click', function(){
+    alert(`currently under development`)
     
-    }
-    otpcontainer = document.createElement('div')
-    otpcontainer.classList.add('otpfield');
 
-    // Generate 4 OTP inputs
-    for (let i = 0; i < 4; i++) {
-        let input = document.createElement('input');
-        input.id = 'otp' + i;
-        input.type = 'text';
-        input.placeholder = '*';
-        input.setAttribute('maxlength', '1');
-        input.classList.add('otpfield-input');
+})
 
-        otpcontainer.appendChild(input);
-    }
+signbutton2.addEventListener('click', function(){
+    alert(`currently under development`)
     
-    form.appendChild(otpcontainer)
-    // Insert OTP container before the button
-    form.insertBefore(otpcontainer, otpbutton);
-
-    // add the otp validation
-
-    
-}
-
-
-});
+})
