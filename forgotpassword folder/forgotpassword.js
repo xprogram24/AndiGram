@@ -24,8 +24,29 @@ forgotpassword.addEventListener('click', function(e) {
         forgotemail.value.indexOf('@') === 0 || 
         forgotemail.value.lastIndexOf('.') < forgotemail.value.indexOf('@')) {
         
+<<<<<<< HEAD
         emailerror.innerText = 'Invalid email format';
         valid = false;
+=======
+    }
+    if(password.value.length < 6){
+        passworderror.innerText = 'pasword must be 6 charachter long'
+        valid = false
+
+    }
+    if(valid ){
+        if (password.value == userPassword && email.value == usersEmail) {
+            
+            
+
+
+        }
+        else{
+            alert('email or password incorrect')
+            form.reset()
+        }
+       
+>>>>>>> fcc711631260bec6dfe2ec8507b0488db45e5d94
     }
 
     if (valid) {

@@ -83,7 +83,7 @@ button.innerText = 'Sign in'
 })
 
 
-
+//subit login validation
 let submit = document.getElementById('submit')
 submit.addEventListener('click', function(e){
     e.preventDefault()
@@ -94,10 +94,10 @@ submit.addEventListener('click', function(e){
     let emailerror = document.getElementById('email-error')
     let passworderror = document.getElementById('password-error')
 
-
+//ensure the error message is empty
     emailerror.textContent = ''
     passworderror.textContent = ''
-
+//form validation logic
     let valid = true;
     if (email.value == ' ' || password.value === '') {
         emailerror.innerText = 'empty field'
@@ -116,9 +116,11 @@ submit.addEventListener('click', function(e){
 
     }
     if(valid ){
+        //link to dashboard
         if (password.value == userPassword && email.value == usersEmail) {
             alert( `login succesfull`)
-            window.location.assign("andigram.html");
+           window.location.href = "dashboard/andigram.html";
+          
         }
        
     }
