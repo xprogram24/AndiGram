@@ -124,9 +124,6 @@ submit.addEventListener('click', function(e){
         }
         else{
             alert('email or password incorrect')
-            window.location.href = "../dashboard/andigram.html"; // Go up one level first
-
-
             form.reset()
         }
        
