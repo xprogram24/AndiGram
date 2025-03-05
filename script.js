@@ -115,13 +115,16 @@ submit.addEventListener('click', function(e){
         valid = false
 
     }
-    if(valid ){
+    if(valid){
         //link to dashboard
         if (password.value == userPassword && email.value == usersEmail) {
             alert( `login succesfull`)
            window.location.href = "dashboard/andigram.html";
           
         }
+else{
+ alert(`imvalid `) 
+}
        
     }
 
