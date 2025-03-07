@@ -28,25 +28,8 @@ forgotpassword.addEventListener('click', function(e) {
         emailerror.innerText = 'Invalid email format';
         valid = false;
     }
-    if(password.value.length < 6){
-        passworderror.innerText = 'pasword must be 6 charachter long'
-        valid = false
-
-    }
-    if(valid ){
-        if (password.value == userPassword && email.value == usersEmail) {
-            
-            
-
-
-        }
-        else{
-            alert('email or password incorrect')
-            form.reset()
-        }
-       
-
-    }
+   
+   
 
     if (valid) {
     // Remove existing elements
@@ -99,6 +82,8 @@ forgotpassword.addEventListener('click', function(e) {
     form.insertBefore(otpcontainer, otpbutton);
 
     // add the otp validation
+    let otpvalue = '1234'
+    
 
     
 }

@@ -144,7 +144,7 @@ submitButton.addEventListener('click', function(e){
        //handle login 
        let storedUser = JSON.parse(localStorage.getItem(email.value))
         if (storedUser && storedUser.password == password.value || password.value == userPassword && email.value == usersEmail) {
-            alert( `login succesfull`)
+            
            window.location.href = "dashboard/andigram.html";
           
         }
