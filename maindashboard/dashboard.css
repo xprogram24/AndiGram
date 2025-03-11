@@ -209,7 +209,6 @@ main {
     overflow-y: auto;
     position: relative;
     right: 0;
-    
 }
 
 @media (max-width: 768px) {
