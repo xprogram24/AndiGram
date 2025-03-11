@@ -23,3 +23,11 @@ sidebarbutton.addEventListener('click', function() {
         sidebarbutton.insertAdjacentElement("afterend", search);
     }
 });
+
+//log out button
+let logoutbtn = document.getElementById('logout')
+
+logoutbtn.addEventListener('click',function(){
+    
+    window.location.href = '/index.html';
+})
