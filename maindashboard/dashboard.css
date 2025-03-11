@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variables */
+:root {
+    --primary-color: #316cff;
+    --hover-color: #8aabff;
+    --text-color: #fff;
+    --placeholder-color: #989494;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: var(--font-family);
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Navbar on top, rest below */
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: static;
+    top: 0;
+}
+.container{
+    
+        display: flex;
+        flex: 1; /* Fills the remaining height */
+        width: 100%;
+    
+}
+#sidebar {
+    background: var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    padding: 0 1em;
+    color: var(--text-color);
+    overflow: hidden;
+    transition: all 0.5s linear;
+}
+
+.sidebar-container {
+    padding: 10px 5px;
+}
+
+.logo {
+    height: 70px;
+    padding: 10px;
+}
+
+.search {
+    margin-bottom: 15px;
+}
+
+.search input[type=search] {
+    border-radius: 20px;
+    width: 100%;
+    height: 30px;
+    background-color: #ffffff;
+    border: 0.2px solid white;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    color: var(--placeholder-color);
+}
+
+.search input[type=search]::placeholder {
+    padding-left: 10px;
+}
+
+.item {
+    padding: 0;
+    height: 88%;
+    position: relative;
+}
+
+.sidebar-ul li {
+    margin: 8px 0px;
+    padding: 0.8em 1em;
+    transition: all 0.5s ease-in-out;
+    border-radius: 8px;
+}
+
+.sidebar-ul li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1.8em;
+}
+
+.sidebar-ul li a span {
+    overflow: hidden;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+#iconsside {
+    margin: 0 10px;
+}
+
+.sidebar-ul li:hover {
+    background: var(--hover-color);
+    border-radius: 10px;
+}
+
+.sidebar-ul li a i {
+    font-size: 1.2em;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    padding: 0 40px;
+    gap: 1.5em;
+    font-size: 14px;
+}
+
+.profileicon {
+    margin-top: 20px;
+}
+
+main {
+    margin-left: 10px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.stories {
+    display: flex;
+    gap: 15px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.story { 
+    text-align: center;
+}
+.story img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 15px;
+    border: 1px solid;
+}
+.story h3{
+    font-size: 0.8em;
+}
+/* Feeds */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feed-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*infor bar section*/
+.right {
+    width: 300px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 50px;
+    }
+
+    #sidebar:hover .sidebar-ul li {
+        display: block;
+    }
+}
