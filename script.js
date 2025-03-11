@@ -2,22 +2,32 @@
 
 let form = document.getElementById('form-sec')
 let button = document.getElementById('sign')
+let submitButton = document.getElementById('submit');
 let inputContainer = null;
 let passwordContainer = null;
-
+//admin email
 let usersEmail =  'test@gmail.com'
 let userPassword =  'test123'
+//
+let islogin = true;
 
 button.addEventListener('click' , function(event){
     event.preventDefault()
 
-    if(inputContainer && passwordContainer){
-        inputContainer.remove() 
-        passwordContainer.remove()
-        inputContainer = null;
-        passwordContainer = null;
-        return;
-    }
+    if(islogin){
+        //switch to signup mode
+        islogin = false
+
+        //removes extra fields
+        if(inputContainer && passwordContainer){
+            inputContainer.remove() 
+            passwordContainer.remove()
+           
+          
+        }
+    
+
+    
 //creatin the div
 inputContainer = document.createElement('div')
 inputContainer.classList.add('input-container')
@@ -76,16 +86,31 @@ passwordField.insertAdjacentElement('afterend',passwordContainer)
 
 
 let header = document.querySelector('h1')
+submitButton.value = 'Sign Up'
 header.innerText = 'Sign up'
-
 button.innerText = 'Sign in'
+}
 
+else{
+    //switching back to login mode
+    islogin = true;
+
+    if(inputContainer && passwordContainer){
+        inputContainer.remove() 
+        passwordContainer.remove()
+     
+    }
+    let header = document.querySelector('h1')
+    submitButton.value = 'Sign in'
+    header.innerText = 'Sign in'
+    button.innerText = 'Sign up'
+
+}
 })
 
-
 //subit login validation
-let submit = document.getElementById('submit')
-submit.addEventListener('click', function(e){
+
+submitButton.addEventListener('click', function(e){
     e.preventDefault()
 
     let email = document.getElementById('email')
@@ -115,17 +140,67 @@ submit.addEventListener('click', function(e){
         valid = false
 
     }
-    if(valid){
-        //link to dashboard
-        if (password.value == userPassword && email.value == usersEmail) {
-            alert( `login succesfull`)
-           window.location.href = "maindashboard/dashboard.html";
+    if(islogin){
+       //handle login 
+       let storedUser = JSON.parse(localStorage.getItem(email.value))
+        if (storedUser && storedUser.password == password.value || password.value == userPassword && email.value == usersEmail) {
+            
+           window.location.href = "dashboard/andigram.html";
           
         }
-else{
- alert(`imvalid `) 
-}
+         else{
+            alert(`invalid password or email`) 
+        }
        
+    }
+
+    else{
+        //handle user signup
+        let nameInput =  document.getElementById('Fullname');
+        let confirmPassworinput = document.getElementById('confirm-password')
+        let nameError = document.getElementById('name-error')
+        let confrimpasswordError = document.getElementById('confirm-password-error')
+
+        nameError.textContent = ''
+        confrimpasswordError.textContent = ''
+
+        if (!nameInput.value){
+            nameError.innerText  = 'name is required'
+            valid = false; 
+        }
+        if(password.value !== confirmPassworinput.value){
+            confrimpasswordError.innerText = 'does not match'
+            valid= false
+        }
+
+        if (valid){
+            if(localStorage.getItem(email.value)){
+                alert('user already exists')
+            }
+            else{
+                //stored as an object
+               let newUser = {
+                name: nameInput.value,
+                email: email.value,
+                password : password.value
+               };
+
+               localStorage.setItem(email.value, JSON.stringify(newUser))
+               alert('signup sucessful')
+
+               //switch back to login
+               islogin = true
+               document.querySelector('h1').innerText = 'Login';
+               submitButton.innerText = 'Login';
+               button.innerText = 'Sign Up';
+
+               if (inputContainer && passwordContainer) {
+                    inputContainer.remove();
+                    passwordContainer.remove();
+              }
+
+            }
+        }
     }
 
 
@@ -144,3 +219,6 @@ signbutton2.addEventListener('click', function(){
     alert(`currently under development`)
     
 })
+
+
+
