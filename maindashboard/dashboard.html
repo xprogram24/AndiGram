@@ -3,43 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andigramn </title>
+    <title>Andigram</title>
     <link rel="stylesheet" href="dashboard.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-container">
-                <div class="logo">
-                    <img src="" alt="logo" srcset="">
-                </div>
-                <div class="search">
-                    <input type="search" name="search" id="search box">
-                </div>
-                <div class="item">
-                    <ul class="sidebar-ul">
-                        <!--add missing icons-->
-                        <li class="sidebar-li">feed</li>
-                        <li class="sidebar-li">stories</li>
-                        <li class="sidebar-li">friends</li>
-                        <li class="sidebar-li">subscriptions</li>
-                        <li class="sidebar-li">setting </li>
-                        <li class="sidebar-li">help & support</li >
-                    </ul>
-                </div>
-
-                <div class="profile">
-                   <a href=""> <img src="" alt="profile image" srcset=""></a>
-                   <h4 class="username">Admin</h4>
-                   <!--icon for log out-->
-                </div>
+    
+        <section id="sidebar">
+            
+                <div class="sidebar-container">
+                    <div class="logo" id="logo">
+                        <img src="your-logo.png" alt="logo">
+                    </div>
+              
+                    <div class="item">
+                        <ul class="sidebar-ul">
+                            <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-house" id="iconsside"></i>
+                                    <span>Feed</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-user-group" id="iconsside"></i>
+                                    <span>stories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-user-group" id="iconsside"></i>
+                                    <span>Friends</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-coins" id="iconsside"></i>
+                                    <span>Subscriptions</span>
+                                </a>
+                            </li>
+                             <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-gear" id="iconsside"></i>
+                                    <span>Settings</span>
+                                </a>
+                             </li>
+                            <li class="sidebar-li">
+                                <a href="#">
+                                    <i class="fa-solid fa-phone" id="iconsside"></i>
+                                    <span>Help</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+    
+                    <div class="profile">
+                        <div class="profileinfo">
+                            <a href="#"><img src="profile.jpg" alt="Profile Image"></a>
+                            <h4 class="username">Admin</h4>
+                        </div>
+                        <div class="profileicon">
+                            <i class="fa-solid fa-arrow-right-from-bracket" id="iconsside"></i>
+                        </div>
+                    </div>
+                
             </div>
-
-        </div>
-        <!--section fro main-->
-        <div class="main">
-            <!--stories preview-->
+        </section>
+      <!-- <section class="main">
+         section fro main
+        
+            stories preview
             <div class="stories">
                 <img src="" alt=""><h3>names</h3>
                 <img src="" alt=""><h3>names</h3>
@@ -58,7 +95,7 @@
                         <!--likes-->
                         <!--comment-->
                         <!--saved-->
-                        <!--shares-->
+                        <!--shares-
                     </div>
                     <div class="comment-section">
                         <div class="comment1">
@@ -68,13 +105,12 @@
                         <div class="comment-icons">
                             <!--copy-->
                             <!--emoji-->
-                            <!--share-->
-                        </div>
-                        
+                            <!--share
+                        </div>                      
                     </div>
                 </div>
             </div>
-        </div>
+       </section>
         <div class="infobar">
             <div class="infobar-top">
                 <div class="infobar-img">
@@ -85,7 +121,7 @@
                 </div>
             </div>
 
-            <!--friend suggestion-->
+            <!--friend suggestion
             <div class="friend">
                 <div class="friend-head">
                     <h2 class="friend">Friend suggestions</h2>
@@ -166,8 +202,8 @@
                 <button class="newpostBtn" > Add new post</button>
             </div>
 
-        </div>
-    </div>
+        </div>-->
+    
     <script src="dashboard.js"></script>
 </body>
 </html>
