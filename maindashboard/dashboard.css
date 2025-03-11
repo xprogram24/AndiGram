@@ -22,9 +22,30 @@
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Navbar on top, rest below */
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
-
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: static;
+    top: 0;
+}
+.container{
+    
+        display: flex;
+        flex: 1; /* Fills the remaining height */
+        width: 100%;
+    
+}
 #sidebar {
     background: var(--primary-color);
     position: sticky;
@@ -39,25 +60,23 @@ body {
     transition: all 0.5s linear;
 }
 
-
-
 .sidebar-container {
-    padding: 30px 5px;
+    padding: 10px 5px;
 }
 
 .logo {
-    height: 80px;
-    padding: 16px;
+    height: 70px;
+    padding: 10px;
 }
 
 .search {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .search input[type=search] {
     border-radius: 20px;
     width: 100%;
-    height: 35px;
+    height: 30px;
     background-color: #ffffff;
     border: 0.2px solid white;
     font-size: 0.8em;
@@ -77,22 +96,22 @@ body {
 
 .sidebar-ul li {
     margin: 8px 0px;
-    padding: 1rem;
+    padding: 0.8em 1em;
     transition: all 0.5s ease-in-out;
     border-radius: 8px;
 }
 
 .sidebar-ul li a {
     color: white;
-   
     display: flex;
     align-items: center;
-    gap: 1.5em;
+    gap: 1.8em;
 }
 
 .sidebar-ul li a span {
     overflow: hidden;
-    font-size: 1.1em;
+    font-size: 1em;
+    opacity: 0.8;
 }
 
 #iconsside {
@@ -105,7 +124,7 @@ body {
 }
 
 .sidebar-ul li a i {
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 .profile {
@@ -124,12 +143,81 @@ body {
     margin-top: 20px;
 }
 
-/*@media (max-width: 768px) {
+main {
+    margin-left: 10px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.stories {
+    display: flex;
+    gap: 15px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.story { 
+    text-align: center;
+}
+.story img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 15px;
+    border: 1px solid;
+}
+.story h3{
+    font-size: 0.8em;
+}
+/* Feeds */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feed-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*infor bar section*/
+.right {
+    width: 300px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    right: 0;
+    
+}
+
+@media (max-width: 768px) {
     #sidebar {
-        width: 40px;
+        width: 50px;
     }
 
     #sidebar:hover .sidebar-ul li {
         display: block;
     }
-}*/
+}
