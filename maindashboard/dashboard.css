@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column; /* Navbar on top, rest below */
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family:  sans-serif;
     
 }
 .navbar {
@@ -75,6 +75,7 @@ body {
         width: 100%;
     
 }
+/*side bar**/
 #sidebar {
     
   
@@ -86,7 +87,7 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 120px;
+    width: 100px;
     height: 100vh;
     padding: 0 1em;
     color: var(--text-color);
@@ -139,18 +140,16 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    gap: 1.8em;
+    gap: 1.7em;
 }
 
 .sidebar-ul li a span {
     overflow: hidden;
-    font-size: 1em;
+    font-size: 0.8em;
     opacity: 0.8;
 }
 
-#iconsside {
-    margin: 0 10px;
-}
+
 
 .sidebar-ul li:hover {
     background: var(--hover-color);
@@ -158,31 +157,35 @@ body {
 }
 
 .sidebar-ul li a i {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .profile {
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
+    position: fixed;
     bottom: 30px;
-    left: 0;
-    width: 100%;
-    padding: 0 40px;
-    gap: 1.5em;
-    font-size: 14px;
+    
+   
+   
+  
+    font-size: 12px;
+    text-align: center;
+    
 }
 
-.profileicon {
-    margin-top: 20px;
-}
 
+.profileinfo a >img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+    border: 1px solid;
+}
+/*main section */
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: #ff3180;
     height: 100vh;
 }
 .main-feed{
@@ -196,7 +199,7 @@ main {
     
     justify-content: space-around;
     margin-bottom: 20px;
-   width: 100%;
+    width: 100%;
     height: auto;
     
     background-color: #fff;
@@ -211,14 +214,14 @@ main {
     flex: 1;
 }
 .story img{
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     flex: 1;
     border: 1px solid;
 }
 .story h3{
-    font-size: 0.8em;
+    font-size: 0.6em;
 }
 /* Feeds */
 .card {
