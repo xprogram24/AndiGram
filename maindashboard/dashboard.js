@@ -14,11 +14,11 @@ function createSearch() {
 }
 
 sidebarbutton.addEventListener('click', function() {
-    if (sidebar.style.width === '300px') {
-        sidebar.style.width = '120px';
+    if (sidebar.style.width === '210px') {
+        sidebar.style.width = '100px';
         search.remove();
     } else {
-        sidebar.style.width = '300px';
+        sidebar.style.width = '210px';
         createSearch();
         sidebarbutton.insertAdjacentElement("afterend", search);
     }
