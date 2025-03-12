@@ -181,7 +181,7 @@ body {
     border: 1px solid;
 }
 /*main section */
-main {
+main{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -232,6 +232,41 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+.card-img{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.card h3{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.card .card-img .user-cardname > h4{
+    font-size: 12px;
+    opacity: 0.8;
+    color: #a8a6a6;
+    font-weight: 400;
+}
+.card .card-user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.feedimg{
+    font-size: 0.8em;
+}
+
+.feedimg img {
+        margin-top: 5px;
+        width: 100%;
+        /* Adjust this as needed */
+        max-height: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+}
+    
 
 .feed-icons {
     display: flex;
