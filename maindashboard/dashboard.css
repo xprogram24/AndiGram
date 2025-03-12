@@ -77,12 +77,9 @@ body {
 }
 /*side bar**/
 #sidebar {
-    
-  
     background: var(--primary-color);
     position: relative;
     display: flex;
- 
     flex-direction: column;
     top: 0;
     left: 0;
@@ -149,8 +146,6 @@ body {
     opacity: 0.8;
 }
 
-
-
 .sidebar-ul li:hover {
     background: var(--hover-color);
     border-radius: 10px;
@@ -163,21 +158,14 @@ body {
 .profile {
     position: fixed;
     bottom: 30px;
-    
-   
-   
-  
     font-size: 12px;
     text-align: center;
-    
 }
 
-
-.profileinfo a >img{
+.profileinfo a > img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    
     border: 1px solid;
 }
 /*main section */
