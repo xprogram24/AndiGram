@@ -20,7 +20,7 @@
     font-family: var(--font-family);
 }
 
-body {
+body { 
     display: flex;
     flex-direction: column; /* Navbar on top, rest below */
     height: 100vh;
@@ -39,6 +39,34 @@ body {
     border: 1px solid rgb(239, 239, 239);
     position: static;
     top: 0;
+    
+    
+}
+.nav-search{
+   
+    width: 50%;
+}
+.nav-search input{
+    border: 1px solid #d9d9da;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+}
+.newpost{ 
+    display: flex;
+    
+    justify-content: center;
+    width: 20%;
+}
+.newpostBtn{
+    
+  
+    width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+    background: #4174f5;
+    color: white;
 }
 .container{
     
@@ -48,8 +76,13 @@ body {
     
 }
 #sidebar {
+    
+  
     background: var(--primary-color);
-    position: sticky;
+    position: relative;
+    display: flex;
+ 
+    flex-direction: column;
     top: 0;
     left: 0;
     bottom: 0;
@@ -149,6 +182,8 @@ main {
     display: flex;
     flex-direction: column;
     flex: 1;
+    background-color: #ff3180;
+    height: 100vh;
 }
 .main-feed{
     padding: 20px;
@@ -159,9 +194,9 @@ main {
     gap: 15px;
     flex: 1;
     
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-bottom: 20px;
-    width: 100%;
+   width: 100%;
     height: auto;
     
     background-color: #fff;
@@ -173,12 +208,13 @@ main {
 }
 .story { 
     text-align: center;
+    flex: 1;
 }
 .story img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-   
+    flex: 1;
     border: 1px solid;
 }
 .story h3{
@@ -221,15 +257,32 @@ main {
     padding: 20px;
     height: 100%;
     position: relative;
+    display: flex;
+   
     right: 0;
 }
 
 @media (max-width: 768px) {
     #sidebar {
         width: 50px;
+      
     }
 
     #sidebar:hover .sidebar-ul li {
         display: block;
+    }
+    .newpost{ 
+        display: flex;
+        
+        justify-content: center;
+        width: 30%;
+    }
+    .newpostBtn{
+        width: 100%;
+        padding: 5px;
+        font-size: 0.7em;
+        border-radius: 20px;
+        background: #4174f5;
+        color: white;
     }
 }
