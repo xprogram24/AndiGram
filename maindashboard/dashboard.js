@@ -38,45 +38,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadMorePosts() {
         for (let i = 0; i < 3; i++) { // Add 3 new posts
-            const newPost = document.createElement("div");
-            newPost.classList.add("card");
-           
-            newPost.innerHTML = `
-                <div class="card-img">
-                    <img src="/images/OIP (2).jpg" alt="" class="card-user-img">
-                    <div class="user-cardname">
-                        <h3 id="username"> ${fetch('https://jsonplaceholder.typicode.com/users/1')
-                            .then(response => response.json())
-                            .then(data => username.innerHTML = `${data.name}`)
-                            .catch(error => console.log(error) )
-                            
-                            }</h3>
-                        <h4>Web Developer</h4>
-                    </div>
-                </div>
-                <div class="feedimg">
-                    <p>This is a new post added dynamically.</p>
-                    <img src="/images/feed image.jpg" alt="feed image" class="feed-img">
-                </div>
-                <div class="feed-icons">
-                           <!--likes-->
-                           <!--comment-->
-                           <!--saved-->
-                           <!--shares-->
-                       </div>
-                       <div class="comment-section">
-                           <div class="comment1">
-                               <img src="" alt="">
-                               <textarea name="" id="">write your comment</textarea>
-                           </div>
-                           <div class="comment-icons">
-                               <!--copy-->
-                               <!--emoji-->
-                               <!--share-->
-                           </div>                      
-                       </div>
-            `;
-            feedsContainer.appendChild(newPost);
+            fetch('https://jsonplaceholder.typicode.com/users/1')
+                .then(response => response.json())
+                .then(data => {
+                    const newPost = document.createElement("div");
+                    newPost.classList.add("card");
+
+                    newPost.innerHTML = `
+                        <div class="card-img">
+                            <img src="/images/OIP (2).jpg" alt="" class="card-user-img">
+                            <div class="user-cardname">
+                                <h3 id="username">${data.name}</h3>
+                                <h4 id = "email">${data.email}</h4>
+                            </div>
+                        </div>
+                        <div class="feedimg">
+                            <p>This is a new post added dynamically.</p>
+                            <img src="/images/feed image.jpg" alt="feed image" class="feed-img">
+                        </div>
+                        <div class="feed-icons">
+                            <!--likes-->
+                            <!--comment-->
+                            <!--saved-->
+                            <!--shares-->
+                        </div>
+                        <div class="comment-section">
+                            <div class="comment1">
+                                <img src="" alt="">
+                                <textarea name="" id="">write your comment</textarea>
+                            </div>
+                            <div class="comment-icons">
+                                <!--copy-->
+                                <!--emoji-->
+                                <!--share-->
+                            </div>                      
+                        </div>
+                    `;
+                    feedsContainer.appendChild(newPost);
+                })
+                .catch(error => console.log(error));
         }
     }
 
