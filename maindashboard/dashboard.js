@@ -33,16 +33,24 @@ logoutbtn.addEventListener('click',function(){
 //creates  the infinite scroll
 document.addEventListener("DOMContentLoaded", function () {
     const feedsContainer = document.querySelector(".feeds");
+    let username = document.getElementById('username')
+    let email = document.getElementById('email')
 
     function loadMorePosts() {
         for (let i = 0; i < 3; i++) { // Add 3 new posts
             const newPost = document.createElement("div");
             newPost.classList.add("card");
+           
             newPost.innerHTML = `
                 <div class="card-img">
                     <img src="/images/OIP (2).jpg" alt="" class="card-user-img">
                     <div class="user-cardname">
-                        <h3>New User ${Math.floor(Math.random() * 100)}</h3>
+                        <h3 id="username"> ${fetch('https://jsonplaceholder.typicode.com/users/1')
+                            .then(response => response.json())
+                            .then(data => username.innerHTML = `${data.name}`)
+                            .catch(error => console.log(error) )
+                            
+                            }</h3>
                         <h4>Web Developer</h4>
                     </div>
                 </div>

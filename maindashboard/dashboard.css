@@ -187,7 +187,7 @@ main{
 .stories {
     display: flex;
     gap: 15px;
-    flex: 1;
+
     
     justify-content: space-around;
     margin-bottom: 20px;
