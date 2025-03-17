@@ -57,10 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
                             <img src="/images/feed image.jpg" alt="feed image" class="feed-img">
                         </div>
                         <div class="feed-icons">
-                            <!--likes-->
-                            <!--comment-->
-                            <!--saved-->
-                            <!--shares-->
+                             <div class="lcss-icon">
+                            <i class="fa-regular fa-thumbs-up" id="feedicon"></i>
+                            <h6>likes</h6>
+                          </div>
+                          <div class="lcss-icon">
+                            <i class="fa-regular fa-share-from-square" id="feedicon"></i>
+                            <h6>share</h6>
+                          </div>
+                          <div class="lcss-icon">
+                            <i class="fa-regular fa-comment" id="feedicon"></i>
+                            <h6>comment</h6>
+                          </div>
+                          <div class="lcss-icon">
+                            <i class="fa-regular fa-bookmark" id="feedicon"></i>
+                            <h6>save</h6>
+                          </div>
                         </div>
                         <div class="comment-section">
                             <div class="comment1">
