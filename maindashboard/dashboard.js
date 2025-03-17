@@ -14,7 +14,7 @@ let searchbox = document.createElement('input');
 }
 
 sidebarbutton.addEventListener('click', function() {
-<<<<<<< HEAD
+
     if (sidebar.style.width === '260px') {
         sidebar.style.width = '120px';
         search.remove();
@@ -25,7 +25,7 @@ sidebarbutton.addEventListener('click', function() {
     }
 });
 
-=======
+
     if (sidebar.style.width === '210px') {
         sidebar.style.width = '100px';
         search.remove();
@@ -35,17 +35,16 @@ sidebarbutton.addEventListener('click', function() {
         sidebarbutton.insertAdjacentElement("afterend", search);
     }
 });*/
->>>>>>> new-function
+
 //log out button
 let logoutbtn = document.getElementById('logout')
 
 logoutbtn.addEventListener('click',function(){
     
     window.location.href = '/index.html';
-<<<<<<< HEAD
+
 })
-=======
-})
+
 //creates  the infinite scroll
 document.addEventListener("DOMContentLoaded", function () {
     const feedsContainer = document.querySelector(".feeds");
@@ -118,4 +117,4 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMorePosts();
 });
 
->>>>>>> new-function
+
