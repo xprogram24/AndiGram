@@ -31,8 +31,9 @@ body {
     display: flex;
     flex: 1; /* Fills the remaining height */
     width: 100%;
+    height: 100vh;
 }
-
+/*nav bar*/
 .navbar {
     width: 100%;
     height: 60px;
@@ -66,8 +67,6 @@ body {
     width: 20%;
 }
 .newpostBtn{
-    
-  
     width: 100%;
     padding: 5px;
     border-radius: 20px;
@@ -187,8 +186,6 @@ main{
 .stories {
     display: flex;
     gap: 15px;
-
-    
     justify-content: space-around;
     margin-bottom: 20px;
     width: 100%;
@@ -199,8 +196,20 @@ main{
     box-shadow: 0px  2px 5px  rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-top: 10px;
+    overflow-x: auto;
     
 }
+.stories-control{
+    overflow: hidden;
+}
+.stories::-webkit-scrollbar {
+    width: 6px;
+}
+.stories::-webkit-scrollbar-corner {
+    background: #aaa;
+    border-radius: 6px;
+}
+
 .story { 
     text-align: center;
     flex: 1;
@@ -222,7 +231,7 @@ main{
 .feeds {
     max-height: 100vh; /* Adjust this value based on your design */
     overflow-y:auto;
-    padding-right: 10px;
+  
 }
 
 /* Optional: Custom Scrollbar */
@@ -235,7 +244,7 @@ main{
 }
 
 
-/* Feeds */
+/* Feeds section*/
 .card {
     
     background: white;
@@ -281,22 +290,33 @@ main{
 
 .feed-icons {
     display: flex;
-    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 10px;
+}
+.lcss-icon{
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+#feedicon{
+    opacity: 0.5;
 }
 
 .comment-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin-top: 10px;
 }
-
+/*comment box*/
 .comment-section textarea {
     width: 100%;
+    height: 3em;
     border: 1px solid #ccc;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    resize: none;
+}
+.comment-section textarea::placeholder{
+    padding: 5px;
 }
 
 /*infor bar section*/
@@ -310,10 +330,11 @@ main{
    
     right: 0;
 }
-
+/*responsiveness*/
 @media (max-width: 768px) {
     #sidebar {
-        width: 50px;
+        width: 110px;
+        padding: 5px;
       
     }
 
@@ -333,5 +354,39 @@ main{
         border-radius: 20px;
         background: #4174f5;
         color: white;
+    }
+    
+}
+@media (max-width: 425px) {
+    #sidebar{
+        display: none;
+    }
+    .nav-search input{
+        font-size: 0.7em;
+    }
+    .right{
+        display: none;
+    }
+    main{
+        width: 90%;
+       
+    }
+    .story img{
+        width: 40px;
+        height: 40px;
+    }
+    .stories { 
+        justify-self: center;
+        width: 99%;
+        text-align: center;
+        overflow-x: auto;
+    }
+    .comment-section textarea {
+        width: 100%;
+        height: 2.5em;
+        border: 1px solid #ccc;
+        padding: 2px;
+        border-radius: 50px;
+        resize: none;
     }
 }
