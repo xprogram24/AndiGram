@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column; /* Navbar on top, rest below */
     height: 100vh;
-    font-family:  sans-serif;
+    font-family: var(--font-family);
 }
 .container{
     display: flex;
@@ -190,7 +190,7 @@ main{
     margin-bottom: 20px;
     width: 100%;
     height: auto;
-    
+
     background-color: #fff;
     padding: 10px 20px;
     box-shadow: 0px  2px 5px  rgba(0, 0, 0, 0.1);
@@ -200,7 +200,7 @@ main{
     
 }
 .stories-control{
-    overflow: hidden;
+    overflow:visible;
 }
 .stories::-webkit-scrollbar {
     width: 6px;
