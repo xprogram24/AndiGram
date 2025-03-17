@@ -20,12 +20,25 @@
     font-family: var(--font-family);
 }
 
-body {
+
+body { 
     display: flex;
     flex-direction: column; /* Navbar on top, rest below */
     height: 100vh;
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 }
+=======
+    font-family:  sans-serif;
+}
+.container{
+    display: flex;
+    flex: 1; /* Fills the remaining height */
+    width: 100%;
+    height: 100vh;
+}
+/*nav bar*/
+>>>>>>> new-function
 .navbar {
     width: 100%;
     height: 60px;
@@ -35,6 +48,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
     border-radius: 10px;
     position: static;
     top: 0;
@@ -46,18 +60,53 @@ body {
         width: 100%;
     
 }
+=======
+    border: 1px solid rgb(239, 239, 239);
+    position: static;
+    top: 0;
+    
+    
+}
+.nav-search{
+   
+    width: 50%;
+}
+.nav-search input{
+    border: 1px solid #d9d9da;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+}
+.newpost{ 
+    display: flex;
+    
+    justify-content: center;
+    width: 20%;
+}
+.newpostBtn{
+    width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+    background: #4174f5;
+    color: white;
+}
+
+/*side bar**/
+>>>>>>> new-function
 #sidebar {
     background: var(--primary-color);
-    position: sticky;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 120px;
+    width: 210px;
     height: 100vh;
     padding: 0 1em;
     color: var(--text-color);
-    overflow: hidden;
-    transition: all 0.5s linear;
+    overflow: hidden; 
 }
 
 .sidebar-container {
@@ -96,8 +145,13 @@ body {
 
 .sidebar-ul li {
     margin: 8px 0px;
+<<<<<<< HEAD
     padding: 0.8em 1em;
     transition: all 0.5s ease-in-out;
+=======
+    padding: 1.1em 1em;
+    
+>>>>>>> new-function
     border-radius: 8px;
 }
 
@@ -105,17 +159,26 @@ body {
     color: white;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 1.8em;
+=======
+    gap: 1.7em;
+>>>>>>> new-function
 }
 
 .sidebar-ul li a span {
     overflow: hidden;
+<<<<<<< HEAD
     font-size: 1em;
     opacity: 0.8;
 }
 
 #iconsside {
     margin: 0 10px;
+=======
+    font-size: 0.8em;
+    opacity: 0.8;
+>>>>>>> new-function
 }
 
 .sidebar-ul li:hover {
@@ -124,25 +187,95 @@ body {
 }
 
 .sidebar-ul li a i {
+<<<<<<< HEAD
     font-size: 1.2em;
+=======
+    font-size: 1em;
+>>>>>>> new-function
 }
 
 .profile {
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
+  
+    position: fixed;
     bottom: 30px;
-    left: 0;
+    
+    font-size: 12px;
+    text-align: center;
+}
+
+.profileinfo a > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+/*main section */
+main{
     width: 100%;
-    padding: 0 40px;
-    gap: 1.5em;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+.main-feed{
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.stories {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px  2px 5px  rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+    
+}
+.stories-control{
+    overflow: hidden;
+}
+.stories::-webkit-scrollbar {
+    width: 6px;
+}
+.stories::-webkit-scrollbar-corner {
+    background: #aaa;
+    border-radius: 6px;
 }
 
-.profileicon {
-    margin-top: 20px;
+.story { 
+    text-align: center;
+    flex: 1;
+}
+.story img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex: 1;
+    
+}
+.story img:hover{
+    transform: scale(1.1);
+    transition: 0.1s ease-out;
+}
+.story h3{
+    font-size: 0.6em;
+}
+.feeds {
+    max-height: 100vh; /* Adjust this value based on your design */
+    overflow-y:auto;
+  
 }
 
+<<<<<<< HEAD
 main {
     margin-left: 10px;
     width: 100%;
@@ -198,6 +331,91 @@ main {
     border: 1px solid #ccc;
     padding: 5px;
     border-radius: 5px;
+=======
+/* Optional: Custom Scrollbar */
+.feeds::-webkit-scrollbar {
+    width: 6px;
+}
+.feeds::-webkit-scrollbar-corner {
+    background: #aaa;
+    border-radius: 6px;
+}
+
+
+/* Feeds section*/
+.card {
+    
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px  2px 5px  rgba(14, 170, 190, 0.1);
+    margin-bottom: 20px;
+}
+.card-img{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.card h3{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.card .card-img .user-cardname > h4{
+    font-size: 12px;
+    opacity: 0.8;
+    color: #a8a6a6;
+    font-weight: 400;
+}
+.card .card-user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.feedimg{
+    font-size: 0.8em;
+}
+.feedimg img {
+        margin-top: 5px;
+        width: 100%;
+        /* Adjust this as needed */
+        max-height: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+}
+    
+
+.feed-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+.lcss-icon{
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+#feedicon{
+    opacity: 0.5;
+}
+
+.comment-section {
+    margin-top: 10px;
+}
+/*comment box*/
+.comment-section textarea {
+    width: 100%;
+    height: 3em;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 50px;
+    resize: none;
+}
+.comment-section textarea::placeholder{
+    padding: 5px;
+>>>>>>> new-function
 }
 
 /*infor bar section*/
@@ -206,17 +424,76 @@ main {
     background-color: #f7f7f7;
     padding: 20px;
     height: 100%;
+<<<<<<< HEAD
     overflow-y: auto;
     position: relative;
     right: 0;
 }
 
+=======
+    position: relative;
+    display: flex;
+   
+    right: 0;
+}
+/*responsiveness*/
+>>>>>>> new-function
 @media (max-width: 768px) {
     #sidebar {
-        width: 50px;
+        width: 110px;
+        padding: 5px;
+      
     }
 
     #sidebar:hover .sidebar-ul li {
         display: block;
+    }
+    .newpost{ 
+        display: flex;
+        
+        justify-content: center;
+        width: 30%;
+    }
+    .newpostBtn{
+        width: 100%;
+        padding: 5px;
+        font-size: 0.7em;
+        border-radius: 20px;
+        background: #4174f5;
+        color: white;
+    }
+    
+}
+@media (max-width: 425px) {
+    #sidebar{
+        display: none;
+    }
+    .nav-search input{
+        font-size: 0.7em;
+    }
+    .right{
+        display: none;
+    }
+    main{
+        width: 90%;
+       
+    }
+    .story img{
+        width: 40px;
+        height: 40px;
+    }
+    .stories { 
+        justify-self: center;
+        width: 99%;
+        text-align: center;
+        overflow-x: auto;
+    }
+    .comment-section textarea {
+        width: 100%;
+        height: 2.5em;
+        border: 1px solid #ccc;
+        padding: 2px;
+        border-radius: 50px;
+        resize: none;
     }
 }
