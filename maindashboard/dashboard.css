@@ -334,7 +334,7 @@ main{
 @media (max-width: 768px) {
     #sidebar {
         width: 110px;
-        padding: 5px;
+        padding-left: 0;
       
     }
 
