@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function loadMorePosts() {
         for (let i = 0; i < 3; i++) { // Add 3 new posts
-            const userData = await fetchUserData();
-            if (userData) {
-                const newCard = createCard(userData);
+            const data = await fetchUserData();
+            if (data) {
+                const newCard = createCard(data);
                 feedsContainer.appendChild(newCard);
             }
         }
