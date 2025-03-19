@@ -36,11 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchUserData() {
         try {
-<<<<<<< HEAD
-            const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-=======
             const response = await fetch('https://jsonplaceholder.typicode.com/users');
->>>>>>> new-function
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -50,11 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return null;
         }
     }
-<<<<<<< HEAD
-
-=======
 //creates card function
->>>>>>> new-function
     function createCard(data) {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -145,15 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return card;
     }
-<<<<<<< HEAD
-
-    async function loadMorePosts() {
-        for (let i = 0; i < 3; i++) { // Add 3 new posts
-            const data = await fetchUserData();
-            if (data) {
-                const newCard = createCard(data);
-                feedsContainer.appendChild(newCard);
-=======
 //asynchronous lood to add new cards
     async function loadMorePosts() {
         for (let i = 0; i < 3; i++) { // Add 3 new posts
@@ -166,7 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     feedsContainer.appendChild(newCard);
                 })
                 
->>>>>>> new-function
             }
         }
     }
