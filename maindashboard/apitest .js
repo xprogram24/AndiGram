@@ -30,7 +30,7 @@ logoutbtn.addEventListener('click',function(){
     
     window.location.href = '/index.html';
 })
-//creates  the infinite scroll
+//creates the infinite scroll
 document.addEventListener("DOMContentLoaded", function () {
     const feedsContainer = document.querySelector(".feeds");
 
@@ -46,8 +46,20 @@ document.addEventListener("DOMContentLoaded", function () {
             return null;
         }
     }
+    async function fetchuserPost() {
+        try {
+            const postresponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+            if (!postresponse.ok) {
+                throw new Error(`HTTP error! status: ${postresponse.status}`)
+            }
+            return await postresponse.json()
+        } catch (error) {
+            console.log('Error fetching posts:', error)
+            return null
+        }
+    }
 //creates card function
-    function createCard(data) {
+    function createCard(user,post) {
         const card = document.createElement("div");
         card.classList.add("card");
 
@@ -63,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
         userCardName.classList.add("user-cardname");
 
         const userName = document.createElement("h3");
-        userName.textContent = data.name;
+        userName.textContent = user.name;
 
         const userEmail = document.createElement("h4");
-        userEmail.textContent = data.email;
+        userEmail.textContent = user.email;
 
         userCardName.appendChild(userName);
         userCardName.appendChild(userEmail);
@@ -77,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         feedImg.classList.add("feedimg");
 
         const feedText = document.createElement("p");
-        feedText.textContent = "This is a new post added dynamically.";
+        feedText.textContent = post.body;
 
         const feedImage = document.createElement("img");
         feedImage.src = "/images/feed image.jpg";
@@ -139,20 +151,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 //asynchronous lood to add new cards
     async function loadMorePosts() {
-        for (let i = 0; i < 3; i++) { // Add 3 new posts
-            const data = await fetchUserData();
-//the response.json is being returned in the fetchuserData() function  and the responsis stored in const data
-
-            if (data) {
-                data.forEach(data => {
+     
+            const users = await fetchUserData();
+            const posts = await fetchuserPost()
+//the response.json() is being returned in the fetchuserData() function  and the response is stored in const data
+        for(let i=0 ;i<3 ;i++){
+            
+            if (users && posts ) {
+                posts.slice(0, 100).forEach((post, index) => {
+                    const user = users[index % users.length]
+                    const newCard = createCard(user, post);
+                    feedsContainer.appendChild(newCard)
+                })
+                /*data.forEach(data => {
                     const newCard = createCard(data);
                     feedsContainer.appendChild(newCard);
                 })
                 
             }
+            if (post) {
+                post.slice(0, 10).forEach(post => {
+                    const newCard = createCard(post);
+                    feedsContainer.appendChild(newCard);
+                })
+                
+            
+        }*/
+    }
         }
     }
-
     feedsContainer.addEventListener("scroll", function () {
         if (feedsContainer.scrollTop + feedsContainer.clientHeight >= feedsContainer.scrollHeight - 10) {
             loadMorePosts();
