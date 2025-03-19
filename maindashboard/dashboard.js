@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 //asynchronous lood to add new cards
     async function loadMorePosts() {
-        for (let i = 0; i < 3; i++) { // Add 3 new posts
+        for (let i = 0; i < 5; i++) { // Add 3 new posts
             const data = await fetchUserData();
 //the response.json is being returned in the fetchuserData() function  and the responsis stored in const data
 
@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(data => {
                     const newCard = createCard(data);
                     feedsContainer.appendChild(newCard);
+
                 })
                 
             }
