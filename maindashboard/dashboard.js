@@ -1,28 +1,29 @@
-let sidebarbutton = document.getElementById('logo');
+let hamburger = document.getElementById('hamburger');
 let sidebar = document.getElementById('sidebar');
-let search = document.createElement('div');
-search.classList.add('search')
-let searchbox = document.createElement('input');
 
-/*function createSearch() {
-    searchbox.type = 'search';
-    searchbox.name = 'search';
-    searchbox.id = 'search-box';
-    searchbox.placeholder = 'search';
-    searchbox.classList.add('search')
-    search.appendChild(searchbox);
-}
+let isSidebarOpen = false; // Track sidebar state
 
-sidebarbutton.addEventListener('click', function() {
-    if (sidebar.style.width === '210px') {
-        sidebar.style.width = '100px';
-        search.remove();
-    } else {
+hamburger.addEventListener('click', function() {
+    if (!isSidebarOpen) {
+        // Open sidebar
+        sidebar.style.display = 'flex';
+        sidebar.style.zIndex = '999999';
         sidebar.style.width = '210px';
-        createSearch();
-        sidebarbutton.insertAdjacentElement("afterend", search);
+        isSidebarOpen = true;
+    } else {
+        // Close sidebar
+        sidebar.style.width = '0'; // Collapse it
+        setTimeout(() => { 
+            sidebar.style.display = 'none'; 
+        }, 100); // Wait for transition to complete
+        isSidebarOpen = false;
     }
-});*/
+});
+
+
+
+
+
 //log out button
 let logoutbtn = document.getElementById('logout')
 
