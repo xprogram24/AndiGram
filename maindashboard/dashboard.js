@@ -3,7 +3,7 @@ let sidebar = document.getElementById('sidebar');
 
 let isSidebarOpen = false; // Track sidebar state
 
-hamburger.addEventListener('click', function() {
+/*hamburger.addEventListener('click', function() {
     if (!isSidebarOpen) {
         // Open sidebar
         sidebar.style.display = 'flex';
@@ -18,7 +18,7 @@ hamburger.addEventListener('click', function() {
         }, 100); // Wait for transition to complete
         isSidebarOpen = false;
     }
-});
+});*/
 
 
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return await response.json();
         } catch (error) {
-            console.error("Error fetching user data:", error);
+            console.log("Error fetching user data:", error);
             return null;
         }
     }
@@ -163,4 +163,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load initial posts
     loadMorePosts();
-});
+})
