@@ -7,12 +7,15 @@ hamburger.addEventListener('click', function() {
     if (!isSidebarOpen) {
         // Open sidebar
         sidebar.style.display = 'flex';
+        sidebar.style.position = 'absolute'
         sidebar.style.zIndex = '999999';
-        sidebar.style.width = '210px';
+        sidebar.style.width = '200px';
+       
         isSidebarOpen = true;
     } else {
         // Close sidebar
         sidebar.style.width = '0'; // Collapse it
+        
         setTimeout(() => { 
             sidebar.style.display = 'none'; 
         }, 100); // Wait for transition to complete
