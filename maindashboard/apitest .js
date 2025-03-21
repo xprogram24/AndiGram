@@ -189,3 +189,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load initial posts
     loadMorePosts();
 });
+
+async function fetchUserData() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        let data = response.json()
+        console.log(data);
+        
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        return null;
+    }
+}
