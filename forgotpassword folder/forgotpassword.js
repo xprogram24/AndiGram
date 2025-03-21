@@ -86,7 +86,10 @@ forgotpassword.addEventListener('click', function(e) {
     }
     otpcontainer = document.createElement('div')
     otpcontainer.classList.add('otpfield');
+
     
 })
+  
+
 
 
