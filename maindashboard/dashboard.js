@@ -7,17 +7,21 @@ let isSidebarOpen = false; // Track sidebar state
     if (!isSidebarOpen) {
         // Open sidebar
         sidebar.style.display = 'flex';
+        sidebar.style.position = 'absolute'
         sidebar.style.zIndex = '999999';
-        sidebar.style.width = '210px';
+        sidebar.style.width = '200px';
+        
         isSidebarOpen = true;
     } else {
         // Close sidebar
         sidebar.style.width = '0'; // Collapse it
+        
         setTimeout(() => { 
             sidebar.style.display = 'none'; 
         }, 100); // Wait for transition to complete
         isSidebarOpen = false;
     }
+});
 });*/
 
 
@@ -37,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchUserData() {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/users');
+            const response = await fetch('https://fake-json-api.mock.beeceptor.com/users');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 //creates card function
-    function createCard(data) {
+    function createCard(data ) {
         const card = document.createElement("div");
         card.classList.add("card");
 
@@ -56,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cardImg.classList.add("card-img");
 
         const userImg = document.createElement("img");
-        userImg.src = "/images/OIP (2).jpg";
+        userImg.src = data.photo;
         userImg.alt = "";
         userImg.classList.add("card-user-img");
 
@@ -64,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userCardName.classList.add("user-cardname");
 
         const userName = document.createElement("h3");
-        userName.textContent = data.name;
+        userName.textContent = data.username;
 
         const userEmail = document.createElement("h4");
         userEmail.textContent = data.email;
@@ -163,4 +167,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load initial posts
     loadMorePosts();
-})
+});

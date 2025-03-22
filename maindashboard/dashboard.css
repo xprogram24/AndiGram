@@ -62,7 +62,6 @@ body {
 }
 .newpost{ 
     display: flex;
-    
     justify-content: center;
     width: 20%;
 }
@@ -155,21 +154,7 @@ body {
     font-size: 1em;
 }
 
-.profile {
-  
-    position: fixed;
-    bottom: 30px;
-    
-    font-size: 12px;
-    text-align: center;
-}
 
-.profileinfo a > img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid;
-}
 /*main section */
 main{
     width: 100%;
@@ -341,16 +326,40 @@ main{
     right: 0;
 }
 /*responsiveness*/
+
+@media (max-width: 1024px) {
+   
+    .newpostBtn{
+        width: 100%;
+        padding: 8px;
+        font-size: 0.6em;
+        border-radius: 20px;
+        background: #4174f5;
+        color: white;
+        height: 3em;
+    }
+    
+}
 @media (max-width: 768px) {
-    #sidebar {
-        width: 110px;
-        padding-left: 0;
-        width: 0;
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
-      
+    .navbar {
+        width: 100%;
+        height: 60px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+       
+        
+        
     }
 
+    #sidebar {
+        display: none;
+        width: 0px;
+        width: 0;
+        transition:  0.3s ease-in-out;
+        overflow: hidden;
+      
+    }
     #sidebar:hover .sidebar-ul li {
         display: block;
     }
@@ -368,6 +377,22 @@ main{
         background: #4174f5;
         color: white;
         
+    }.nav-search input {
+        display: none;
+    }
+    .nav-search::before {
+        content: 'Andigram';
+        display: block;
+        font-size: 1.3em;
+        color: #316cff;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    #hamburger{
+        display: block;
+    }  
+    .right{
+        display: none;
     }
     
 }
@@ -376,8 +401,9 @@ main{
         display: none;
         width: 0px;
         width: 0;
-        transition: width 0.3s ease-in-out;
+        transition: 0.3s ease;
         overflow: hidden;
+        
     }
     .nav-search input{
         font-size: 0.7em;
@@ -407,6 +433,10 @@ main{
         border-radius: 50px;
         resize: none;
     }
+    .nav-search{
+   
+        width: 40%;
+    }
     .nav-search input {
         display: none;
     }
@@ -421,11 +451,19 @@ main{
     #hamburger{
         display: block;
     }
+    .newpostBtn{
+        width: 100%;
+        padding: 4px;
+        font-size: 0.5em;
+        border-radius: 20px;
+        background: #4174f5;
+        color: white;
+    }
 }
 @media (max-width: 320px){
     .newpostBtn{
         width: 100%;
-        padding: 8px;
+        padding: 3px;
         font-size: 0.5em;
         border-radius: 20px;
         background: #4174f5;
