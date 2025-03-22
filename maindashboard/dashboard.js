@@ -3,7 +3,7 @@ let sidebar = document.getElementById('sidebar');
 
 let isSidebarOpen = false; // Track sidebar state
 
-/*hamburger.addEventListener('click', function() {
+hamburger.addEventListener('click', function() {
     if (!isSidebarOpen) {
         // Open sidebar
         sidebar.style.display = 'flex';
@@ -22,7 +22,7 @@ let isSidebarOpen = false; // Track sidebar state
         isSidebarOpen = false;
     }
 });
-});*/
+
 
 
 
