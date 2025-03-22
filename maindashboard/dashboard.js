@@ -168,3 +168,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load initial posts
     loadMorePosts();
 });
+
+//icon click
