@@ -316,7 +316,7 @@ main{
 
 /*infor bar section*/
 .right {
-    width: 300px;
+    width: 23%;
     background-color: #f7f7f7;
     padding: 20px;
     height: 100%;
@@ -324,6 +324,49 @@ main{
     display: flex;
    
     right: 0;
+}
+.infobar-top{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.infobar-top .infobar-img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex: 1;
+}
+.friend{
+    display: inline-block;
+}
+.friend-head{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin:20px 0 ;
+}
+.friend-heading{
+    font-size:1.2em;
+    opacity: 0.8;
+   
+}
+.friend-body .userfriend{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+.friend-body hr{
+    width: 100%;
+    opacity: 0.5;
+    height:2px ;
+    display: block;
+    background-color: rgb(157, 157, 157);
+}
+.userfriend img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  
 }
 /*responsiveness*/
 

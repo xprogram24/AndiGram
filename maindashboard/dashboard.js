@@ -38,7 +38,7 @@ logoutbtn.addEventListener('click',function(){
 //creates  the infinite scroll
 document.addEventListener("DOMContentLoaded", function () {
     const feedsContainer = document.querySelector(".feeds");
-
+    const friendbody = document.getElementById('friendbody')
     async function fetchUserData() {
         try {
             const response = await fetch('https://fake-json-api.mock.beeceptor.com/users');
@@ -142,9 +142,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return card;
     }
+
+    function createfriends(friends){
+        const userfriend = document.createElement('div')
+        userfriend.classList.add('userfriend')
+
+        const  friendsimg = document.createElement('img')
+        friendsimg.src = friends.photo
+        friendsimg.alt = 'friends'
+        friendsimg.id = 'suggestions-img'
+        friendsimg.classList.add('userfriend-img')
+
+        const usernameclass = document.createElement('div')
+        usernameclass.classList.add('friend-username')
+
+        const p = document.createElement('p')
+        p.textContent = friends.username
+
+        const link = document.createElement('a')
+        link.textContent = friends.email
+
+        const icon = document.createElement('div')
+        icon.classList.add('friends-icon')
+
+        usernameclass.appendChild(p)
+        usernameclass.appendChild(link)
+
+        userfriend.appendChild(friendsimg)
+        userfriend.appendChild(usernameclass)
+
+        return userfriend
+
+    }
 //asynchronous lood to add new cards
     async function loadMorePosts() {
-        for (let i = 0; i < 5; i++) { // Add 3 new posts
+        for (let i = 0; i < 2; i++) { // Add 3 new posts
             const data = await fetchUserData();
 //the response.json is being returned in the fetchuserData() function  and the responsis stored in const data
 
@@ -158,6 +190,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+
+    async function loadfriends() {
+        for(let i = 0; i<= 3 ; i++){
+            const friendsdata = await fetchUserData();
+
+            if (friendsdata) {
+                friendsdata.forEach(friends =>{
+                    const newfriend = createfriends(friends);
+                    friendbody.appendChild(newfriend)
+
+                })
+            }
+        }
+        
+    }
+
+    loadfriends()
 
     feedsContainer.addEventListener("scroll", function () {
         if (feedsContainer.scrollTop + feedsContainer.clientHeight >= feedsContainer.scrollHeight - 10) {
