@@ -170,6 +170,9 @@ main{
     flex-direction: column;
     padding: 20px;
 }
+.stories-control{
+    overflow:visible;
+}
 .stories {
     display: flex;
     gap: 15px;
@@ -186,9 +189,7 @@ main{
     overflow-x: auto;
     
 }
-.stories-control{
-    overflow:visible;
-}
+
 .stories::-webkit-scrollbar {
     width: 6px;
 }
@@ -322,13 +323,14 @@ main{
     height: 100%;
     position: relative;
     display: flex;
-   
+    max-height: 100vh;
     right: 0;
 }
+
 .infobar-top{
     display: flex;
     justify-content: space-between;
-    
+    gap: 40px;
 }
 .infobar-top .infobar-img img{
     width: 50px;
@@ -338,29 +340,49 @@ main{
 }
 .friend{
     display: inline-block;
+    overflow:visible;
+}
+.friend ::-webkit-scrollbar{
+    width: 6px;
 }
 .friend-head{
     display: flex;
     justify-content: space-between;
-    gap: 60px;
-    margin:20px 0 ;
+    gap: 30px;
+    
+    height: 50px;
+   width: 100%;
 }
+
+
 .friend-heading{
     font-size:1.2em;
     opacity: 0.8;
    
 }
+.friend-body{
+    overflow:scroll;
+    max-height: 60vh;
+    background-color: #ffffffd2;
+    border-radius: 10px;
+}
+
 .friend-body .userfriend{
     display: flex;
-    justify-content: space-evenly;
-    margin: 10px 0;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+    gap:10px;
+    margin: 5% 0;
+    padding: 5px 0px  5px 10px;
+    box-shadow: 0px  2px 3px  rgba(107, 107, 107, 0.1);
 }
 .friend-body hr{
     width: 100%;
     opacity: 0.5;
     height:2px ;
     display: block;
-    background-color: rgb(157, 157, 157);
+    background-color: rgb(221, 11, 11);
 }
 .userfriend img{
     width: 50px;
@@ -368,6 +390,11 @@ main{
     border-radius: 50%;
   
 }
+
+.friend-body .userfriend a{
+    color: #385cb8;
+}
+
 /*responsiveness*/
 
 @media (max-width: 1024px) {
@@ -381,7 +408,38 @@ main{
         color: white;
         height: 3em;
     }
-    
+    .right {
+        width: 25%;
+        background-color: #f7f7f7;
+        padding: 10px;
+     
+    }
+    .infobar-top{
+        
+      flex-direction: column;
+        
+    }
+    .friend-head{
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 20px;
+        height: 50px;
+         width: 100%;
+    }
+    .friend-body{
+      
+    }
+    .userfriend{
+        width: 95%;
+       
+    }
+   
+    .userfriend .friend-username a{
+        font-size: 0.75em;
+        color: #385cb8;
+    }
 }
 @media (max-width: 768px) {
     .navbar {

@@ -160,7 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
         p.textContent = friends.username
 
         const link = document.createElement('a')
-        link.textContent = friends.email
+        link.textContent = friends.name
+        link.href = '#'
 
         const icon = document.createElement('div')
         icon.classList.add('friends-icon')
