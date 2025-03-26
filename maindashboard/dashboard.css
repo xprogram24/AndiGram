@@ -523,10 +523,12 @@ footer{
     }
     .footer-container i{
         color: #316cff;
-        transform: scale(1.1);
+        transform: scale(1.2);
         transition: 5 ease-in-out;
     }
-   
+    .footer-container a{
+        padding: 10px;
+    }
 }
 @media (max-width: 425px) {
     #sidebar{
