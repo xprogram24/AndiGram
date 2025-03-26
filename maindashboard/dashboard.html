@@ -15,7 +15,7 @@
         <aside id="sidebar">
                 <div class="sidebar-container">
                     <div class="logo" id="logo">
-                        <img src="your-logo.png" alt="Andigram">
+                        <img src="your-logo.png" alt="Andigram Logo">
                     </div>
                     <div class="item">
                         <ul class="sidebar-ul">
@@ -36,13 +36,13 @@
         <!--nav bar -->
         <nav class="navbar">
             <div class="nav-search">
-                <input type="search" name="" id="nav-searchbar" placeholder="search friend , groups , pages">
+                <input type="search" name="search" id="nav-searchbar" placeholder="Search friends, groups, pages" aria-label="Search bar">
 
             </div>
             <div class="newpost">
                 <button class="newpostBtn" > Add new post <i class="fa-solid fa-plus"></i></button>  
             </div>
-            <i class="fa-solid fa-bars" id="hamburger"></i>
+            <i class="fa-solid fa-bars" id="hamburger" aria-label="Menu" role="button" tabindex="0"></i>
         </nav>    
         
         <section class="main-feed">
@@ -63,6 +63,8 @@
                    
                </div>
           </section>
+
+          
        </main>
 
        <!--infobar section-->
@@ -70,7 +72,7 @@
         <div class="infobar">
             <div class="infobar-top">
                 <div class="infobar-img">
-                    <img src="/images/OIP (1).jpg" alt="image">
+                    <img src="/images/OIP (1).jpg" alt="User profile image">
                 </div>
                 <div class="infobar-icons">
                     icon *3
@@ -102,7 +104,14 @@
        
        </aside>
        
-    
+       <footer>
+       <div class="footer-container">
+            <a href="dashboard.html" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a><!--home link-->
+            <a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a><!--search-->
+            <a href="/user profile/profile.html" aria-label="User Profile"><i class="fa-solid fa-user" aria-hidden="true"></i></a><!--user profile, temporarily going to be icon-->
+       </div>
+
+       </footer>
     </div>
     <script src="dashboard.js"></script>
 </body>
