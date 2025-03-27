@@ -23,7 +23,8 @@ hamburger.addEventListener('click', function() {
     }
 });
 
-
+const storedUsername = document.getElementById('username')
+storedUsername.innerText = localStorage.getItem('username')
 
 
 
