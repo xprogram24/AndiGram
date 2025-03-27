@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile">
+                <img src="/images/OIP (2).jpg" id="profile-pic" alt="Profile Picture">
+            </div>
+            <div class="middle">
+                <h2 id="username">User Name</h2>
+                <h4 id="fullname">Fullname</h4>
+            </div>
+                
+            </div>
+            <button id="edit-profile-btn">Edit Profile</button>
+        
+
+        <!-- Profile Bio and Stats -->
+        <div class="profile-content">
+            <p id="bio">This is my bio.</p>
+            <div class="profile-stats">
+                <p><span id="posts-count">0</span> Posts</p>
+                <p><span id="followers-count">3</span> Followers</p>
+                <p><span id="following-count">0</span> Following</p>
+            </div>
+        </div>
+
+        <!-- Edit Profile Modal -->
+        <div class="edit-profile-modal hidden">
+            <div class="modal-content">
+                <h3>Edit Profile</h3>
+                <!--<input type="file" name="" id="edit-profilepic" placeholder="profile picture">-->
+                <input type="text" id="edit-username" placeholder="New Username">
+                <input type="text" id="edit-fullname" placeholder="fullname">
+                <textarea id="edit-bio" placeholder="Update your bio"></textarea>
+                <button id="save-profile">Save</button>
+                <button id="close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
