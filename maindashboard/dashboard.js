@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return card;
     }
-
+    //function that dynamicaly create friend section
     function createfriends(friends){
         const userfriend = document.createElement('div')
         userfriend.classList.add('userfriend')
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
+//async function for load friend section
     async function loadfriends() {
         for(let i = 0; i<= 3 ; i++){
             const friendsdata = await fetchUserData();
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadfriends()
-
+//event listener for scroll on feed 
     feedsContainer.addEventListener("scroll", function () {
         if (feedsContainer.scrollTop + feedsContainer.clientHeight >= feedsContainer.scrollHeight - 10) {
             loadMorePosts();

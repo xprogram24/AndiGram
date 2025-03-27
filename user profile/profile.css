@@ -6,7 +6,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
+/*profile container*/
 .profile-container {
     max-width: 600px;
     width: 90%;
@@ -57,7 +57,7 @@ button {
     justify-content: space-around;
     margin-top: 10px;
 }
-
+/*edit section to edit acccount*/
 .edit-profile-modal {
     position: fixed;
     top: 0;

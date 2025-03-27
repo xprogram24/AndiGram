@@ -19,13 +19,14 @@
     list-style-type: none;
     font-family: var(--font-family);
 }
-
+/* body of the code*/
 body { 
     display: flex;
     flex-direction: column; /* Navbar on top, rest below */
     height: 100vh;
     font-family: var(--font-family);
 }
+/* container the encapsulate all element and layout structure*/
 .container{
     display: flex;
     flex: 1; /* Fills the remaining height */
@@ -48,6 +49,7 @@ body {
     
     
 }
+/*search field */
 .nav-search{
    
     width: 50%;
@@ -91,6 +93,7 @@ body {
 .sidebar-container {
     padding: 10px 5px;
 }
+/* side bar picture*/
  .userpic{
     display: flex;
     justify-content: left;
@@ -186,9 +189,11 @@ main{
     flex-direction: column;
     padding: 20px;
 }
+/* stories control to ensure scroll*/
 .stories-control{
     overflow:visible;
 }
+/* stories section */
 .stories {
     display: flex;
     gap: 15px;
@@ -232,6 +237,7 @@ main{
 .story h3{
     font-size: 0.6em;
 }
+/* main feed section*/
 .feeds {
     max-height: 100vh; /* Adjust this value based on your design */
     overflow-y:auto;
@@ -248,7 +254,7 @@ main{
 }
 
 
-/* Feeds section*/
+/* Feeds section for the feed cards*/
 .card {
     
     background: white;
