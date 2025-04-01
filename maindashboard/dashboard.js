@@ -221,3 +221,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //icon click
+
+//adding new post
+let addpost = document.getElementById('addpost')
+let newpost = document.getElementById("newpost")
+newpost.addEventListener('click', function() {
+    console.log('newpost clicked');
+    addpost.style.display = 'flex'
+    
+})
+
+let Close = document.getElementById("close")
+Close.addEventListener('click', function(){
+    addpost.style.display = 'none'
+})
