@@ -570,7 +570,6 @@ footer{
         background-color: #fff;
         display: flex;
         justify-content: space-around;
-    
     }
 
     #sidebar {
@@ -807,5 +806,13 @@ footer{
         border-radius: 20px;
         background: #4174f5;
         color: white;
+    }
+    .addpost-modal-body{
+        width: 90vw;
+        height: 25vh;
+        bottom: 0;
+        top: 10px;
+        padding: 25px;
+        border-radius: 10px;
     }
 }
