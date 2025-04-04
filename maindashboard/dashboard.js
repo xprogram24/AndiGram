@@ -1,6 +1,6 @@
 let hamburger = document.getElementById('hamburger');
 let sidebar = document.getElementById('sidebar');
-
+let mainbody = document.getElementById('main')
 let isSidebarOpen = false; // Track sidebar state
 
 hamburger.addEventListener('click', function() {
@@ -9,7 +9,7 @@ hamburger.addEventListener('click', function() {
         sidebar.style.display = 'flex';
         sidebar.style.position = 'absolute'
         sidebar.style.zIndex = '999999';
-        sidebar.style.width = '200px';
+        sidebar.style.width = '180px';
         
         isSidebarOpen = true;
     } else {
@@ -22,6 +22,10 @@ hamburger.addEventListener('click', function() {
         isSidebarOpen = false;
     }
 });
+
+mainbody.addEventListener('click',function(){
+        sidebar.style.display = 'none';   //side bar collapse when user clicks outside it
+})
 
 const storedUsername = document.getElementById('username')
 storedUsername.innerText = localStorage.getItem('username')

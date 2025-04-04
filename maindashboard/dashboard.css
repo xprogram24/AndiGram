@@ -87,14 +87,12 @@ body {
     bottom: 0;
     width: 210px;
     height: 100vh;
-    padding: 0 1em;
+    padding-left: 1em;
     color: var(--text-color);
     overflow: hidden; 
 }
 
-.sidebar-container {
-    padding: 10px 5px;
-}
+
 /* side bar picture*/
  .userpic{
     display: flex;
@@ -111,32 +109,6 @@ body {
     border-radius: 50%;
     margin-right: 20px;
 }
-
-.search {
-    margin-bottom: 15px;
-}
-
-.search input[type=search] {
-    border-radius: 20px;
-    width: 100%;
-    height: 30px;
-    background-color: #ffffff;
-    border: 0.2px solid white;
-    font-size: 0.8em;
-    padding: 5px 10px;
-    color: var(--placeholder-color);
-}
-
-.search input[type=search]::placeholder {
-    padding-left: 10px;
-}
-
-.item {
-    padding: 0;
-    height: 88%;
-    position: relative;
-}
-
 .sidebar-ul li {
     margin: 8px 0px;
     padding: 1.1em 1em;
@@ -145,7 +117,6 @@ body {
 }
 .sidebar-ul li:focus{
     /* Customize focus outline */
-
     outline: 2px solid var(--primary-color); /* Replace with your desired color */
     outline-offset: 2px;
 
@@ -434,7 +405,7 @@ footer{
     backdrop-filter: blur(10px);
     opacity: 1  ;
     transition: .3s ease;
-    display: none;/*return to none when completes*/
+    display: flex;/*return to none when completes*/
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -503,7 +474,7 @@ footer{
     margin-top: 10px;
 }
 .additems-button >input[type="submit"]{
-    background-color: #316cff;
+    background-color: #4174f5;;
     color:#fff;
    padding: 10px 25px ;
    border-radius: 25px;
@@ -518,6 +489,14 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.icon-post .additems-icons  i{
+    transform: scale(1.2);
+    margin: 5px;
+    color: #4174f5;
+}
+.icon-post .additems-icons .fa-face-smile{
+    color: orange;
 }
 /*responsiveness*/
 
@@ -574,11 +553,10 @@ footer{
 
     #sidebar {
         display: none;
-        width: 0px;
-        width: 0;
         transition:  0.3s ease-in-out;
         overflow: hidden;
-      
+        padding: 0.4em;
+        
     }
     #sidebar:hover .sidebar-ul li {
         display: block;
@@ -677,10 +655,10 @@ footer{
 @media (max-width: 425px) {
     #sidebar{
         display: none;
-        width: 0px;
-        width: 0;
+        padding: 0.4em;
         transition: 0.3s ease;
         overflow: hidden;
+      
     }
     .nav-search input{
         font-size: 0.7em;
