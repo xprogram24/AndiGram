@@ -424,43 +424,101 @@ footer{
     display: none;
 }
 #addpost{
-    z-index:999999999;
+    z-index:9;
     position: fixed;
     width: 100%;
     height: 100vh;
-
     bottom: 0;
     left: 0;
     background: var(--bg-transparent-color);
     backdrop-filter: blur(10px);
     opacity: 1  ;
     transition: .3s ease;
-    display: none;
+    display: flex;/*return to noe when completes*/
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     
+}
+#addpost::-webkit-scrollbar{
+    width: 6px;
 }
 .addpost-modal-body{
     position: relative;
-    background: #fff;
-    width: 100vw;
-    height: 100vh;
+    background: #ffffff;
+    width: 70vw;
+    height: 40vh;
     bottom: 0;
-    top: 200px;
-   margin: 20px;
+    top: 20px;
+    margin: 0px;
     padding: 40px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     transform: translateY(-50px);
     transition: .5s ease;
+    overflow: hidden;
+   
 }
 .addpost-modal-body .fa-xmark{
     position: fixed;
     top: 15px;
     right: 15px;
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
+.addpost-modal-body img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+.additems{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column; 
+    gap: 8em;
+}
+.additems-head{
+    display: flex;
+    align-items: center;
+    gap: 50px;
 
+}
+.additems .hr{
+    height: 2px;
+    background-color: rgb(185, 180, 180);
+    width: px;
+    transform: rotate(90deg);
+    position: relative;
+    border: 7px solid #545455;
+}
+#postext{
+    resize: none;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #545455;
+}
+.additems-button{
+    margin-top: 10px;
+}
+.additems-button >input[type="submit"]{
+    background-color: #316cff;
+    color:#fff;
+   padding: 10px 25px ;
+   border-radius: 25px;
+   cursor: pointer;
+}
+.additems-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.icon-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /*responsiveness*/
 
 @media (max-width: 1024px) {
@@ -597,6 +655,25 @@ footer{
     .footer-container a{
         padding: 10px;
     }
+    .additems{
+        gap: 2.5em;
+    }
+    .addpost-modal-body{
+        width: 90vw;
+        height: 30vh;
+        bottom: 0;
+        top: 10px;
+        padding: 25px;
+        border-radius: 10px;
+    }
+    .additems-button >input[type="submit"]{
+        background-color: #316cff;
+        color:#fff;
+        padding: 5px 30px ;
+       
+        border-radius: 25px;
+        cursor: pointer;
+     }
 }
 @media (max-width: 425px) {
     #sidebar{
@@ -605,7 +682,6 @@ footer{
         width: 0;
         transition: 0.3s ease;
         overflow: hidden;
-        
     }
     .nav-search input{
         font-size: 0.7em;
@@ -660,6 +736,67 @@ footer{
         border-radius: 20px;
         background: #4174f5;
         color: white;
+    }
+    .addpost-modal-body{
+
+        width: 90vw;
+        height: 25vh;
+        bottom: 0;
+        top: 10px;
+        padding: 25px;
+        border-radius: 10px;
+    
+    }
+    .addpost-modal-body .fa-xmark{
+        
+        top: 15px;
+        right: 15px;
+        opacity: 0.5;
+    }
+    .addpost-modal-body img{
+        width: 40px;
+        height: 40px;
+       
+        
+    }
+    .additems{
+        gap: 3em;
+    }
+    .additems-head{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    
+    }
+    /*.additems .hr{
+        height: 2px;
+        background-color: rgb(185, 180, 180);
+        width: px;
+        transform: rotate(90deg);
+        position: relative;
+        border: 7px solid #545455;
+    }*/
+    #postext{
+        resize: none;
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #545455;
+    }
+
+    .additems-head p{
+        font-size: 0.9em;
+    }
+    .additems-button{
+        margin-top: 10px;
+    }
+    .additems-button >input[type="submit"]{
+       background-color: #316cff;
+       color:#fff;
+       padding: 5px 25px ;
+       font-size: 0.7em;
+       border-radius: 25px;
+       cursor: pointer;
     }
 }
 @media (max-width: 320px){
