@@ -98,33 +98,59 @@ document.addEventListener("DOMContentLoaded", function () {
         feedImg.appendChild(feedImage);
 
         const feedIcons = document.createElement("div");
-        feedIcons.classList.add("feed-icons");
+feedIcons.className = "feed-icons";
 
-        const icons = [
-            { class: "fa-thumbs-up", label: "likes" },
-            { class: "fa-share-from-square", label: "share" },
-            { class: "fa-comment", label: "comment" },
-            { class: "fa-bookmark", label: "save" }
-        ];
+const iconData = [
+  ["fa-thumbs-up", "likes"],
+  ["fa-share-from-square", "share"],
+  ["fa-comment", "comment"],
+  ["fa-bookmark", "save"]
+];
 
-        icons.forEach(icon => {
-            const iconContainer = document.createElement("div");
-            iconContainer.classList.add("lcss-icon");
+const iconStates = {
+  likes: false,
+  share: false,
+  comment: false,
+  save: false
+};
 
-            const iconElement = document.createElement("i");
-            iconElement.classList.add("fa-regular", icon.class);
-            iconElement.id = "feedicon";
+for (const [iconClass, label] of iconData) {
+  const container = document.createElement("div");
+  container.className = "lcss-icon";
 
-            const iconLabel = document.createElement("h6");
-            iconLabel.textContent = icon.label;
+  const icon = document.createElement("i");
+  icon.className = `fa-regular ${iconClass}`;
+  icon.id = `feedicon-${label}`;
 
-            iconContainer.appendChild(iconElement);
-            iconContainer.appendChild(iconLabel);
-            feedIcons.appendChild(iconContainer);
-        });
+  const text = document.createElement("h6");
+  
 
-        const commentSection = document.createElement("div");
-        commentSection.classList.add("comment-section");
+  // Add click behavior
+  container.addEventListener("click", () => {
+    iconStates[label] = !iconStates[label]; // Toggle state
+
+    if (iconStates[label]) {
+      icon.classList.remove("fa-regular");
+      icon.classList.add("fa-solid");
+      icon.style.color = "#007bff"; // Highlight color (blue)
+    } else {
+      icon.classList.remove("fa-solid");
+      icon.classList.add("fa-regular");
+      icon.style.color = ""; // Reset color
+    }
+
+    console.log(`${label} clicked: ${iconStates[label]}`);
+  });
+
+  container.append(icon, text);
+  feedIcons.appendChild(container);
+}
+
+// Append to your target container
+document.body.appendChild(feedIcons); // Change to your actual container if needed
+
+
+        
 
         const comment1 = document.createElement("div");
         comment1.classList.add("comment1");
@@ -138,12 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         comment1.appendChild(commentImg);
         comment1.appendChild(commentTextarea);
-        commentSection.appendChild(comment1);
+        
 
         card.appendChild(cardImg);
         card.appendChild(feedImg);
         card.appendChild(feedIcons);
-        card.appendChild(commentSection);
+        
 
         return card;
     }
@@ -239,3 +265,4 @@ let Close = document.getElementById("close")
 Close.addEventListener('click', function(){
     addpost.style.display = 'none'
 })
+

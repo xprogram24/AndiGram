@@ -273,14 +273,29 @@ main{
 
 .feed-icons {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     align-items: center;
     margin-top: 10px;
+    margin-left: 5px;
+    gap: 20px;
 }
 .lcss-icon{
     margin-top: 10px;
     display: flex;
     gap: 5px;
+}
+.lcss-icon:hover{
+    transform: scale(1.1);
+    transition: decor 1s ease-in-out ;
+
+}
+@keyframes decor {
+    0%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(40deg);
+    }
 }
 #feedicon{
     opacity: 0.5;
