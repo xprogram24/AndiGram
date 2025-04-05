@@ -405,7 +405,7 @@ footer{
     backdrop-filter: blur(10px);
     opacity: 1  ;
     transition: .3s ease;
-    display: flex;/*return to none when completes*/
+    display: none;/*return to none when completes*/
     justify-content: center;
     align-items: center;
     overflow: hidden;
