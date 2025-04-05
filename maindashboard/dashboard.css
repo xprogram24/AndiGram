@@ -418,7 +418,7 @@ footer{
     position: relative;
     background: #ffffff;
     width: 70vw;
-    height: 40vh;
+    height: 50vh;
     bottom: 0;
     top: 20px;
     margin: 0px;
@@ -637,7 +637,7 @@ footer{
     }
     .addpost-modal-body{
         width: 90vw;
-        height: 30vh;
+        height: 35vh;
         bottom: 0;
         top: 10px;
         padding: 25px;
@@ -717,7 +717,7 @@ footer{
     .addpost-modal-body{
 
         width: 90vw;
-        height: 25vh;
+        height: 32vh;
         bottom: 0;
         top: 10px;
         padding: 25px;
@@ -787,7 +787,7 @@ footer{
     }
     .addpost-modal-body{
         width: 90vw;
-        height: 25vh;
+        height: 32vh;
         bottom: 0;
         top: 10px;
         padding: 25px;
