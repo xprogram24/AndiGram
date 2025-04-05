@@ -447,7 +447,7 @@ footer{
     display: flex;
     justify-content:space-between;
     flex-direction: column; 
-    gap: 8em;
+    gap: 4em;
 }
 .additems-head{
     display: flex;
@@ -633,7 +633,7 @@ footer{
         padding: 10px;
     }
     .additems{
-        gap: 2.5em;
+        gap: 0.5em;
     }
     .addpost-modal-body{
         width: 90vw;
@@ -737,7 +737,7 @@ footer{
         
     }
     .additems{
-        gap: 3em;
+        gap: 0.5em;
     }
     .additems-head{
         display: flex;
