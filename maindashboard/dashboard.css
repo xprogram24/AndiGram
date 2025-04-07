@@ -240,6 +240,7 @@ main{
     display: flex;
     gap: 5px;
     margin-bottom: 10px;
+    
 }
 .card h3{
     font-size: 0.9em;

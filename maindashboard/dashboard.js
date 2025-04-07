@@ -23,9 +23,26 @@ hamburger.addEventListener('click', function() {
     }
 });
 
-mainbody.addEventListener('click',function(){
-        sidebar.style.display = 'none';   //side bar collapse when user clicks outside it
-})
+/**/
+//adding body click on specifc screen sizes
+
+const mediaQuery = window.matchMedia(`(max-width: 768px)`)
+    function handleScreenSize(e){
+        if(e.matches){
+
+            console.log('mobile screen size detected');
+            mainbody.addEventListener('click',function(){
+                sidebar.style.display = 'none';   //side bar collapse when user clicks outside it
+        })
+            
+        }
+        else{
+            console.log('larger screen size detected');
+            
+        }
+    }
+    handleScreenSize(mediaQuery)
+    mediaQuery.addEventListener('change',handleScreenSize)
 
 const storedUsername = document.getElementById('username')
 storedUsername.innerText = localStorage.getItem('username')
