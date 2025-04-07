@@ -283,3 +283,18 @@ Close.addEventListener('click', function(){
     addpost.style.display = 'none'
 })
 
+//upload click test
+const icon = document.getElementById('triggerUpload');
+const fileinput = document.getElementById('fileInput')
+
+icon.addEventListener('click',() => {
+    fileinput.click()
+})
+
+fileinput.addEventListener('change', () => {
+    const file = fileinput.files[0];
+    if (file) {
+        alert(`you selected: ${file.name}`)
+        
+    }
+})

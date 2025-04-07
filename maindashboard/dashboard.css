@@ -214,6 +214,8 @@ main{
 .feeds {
     max-height: 100vh; /* Adjust this value based on your design */
     overflow-y:auto;
+   
+    justify-items: center;
   
 }
 
@@ -231,11 +233,22 @@ main{
 .card {
     
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px  2px 5px  rgba(14, 170, 190, 0.1);
-    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin: 40px;
+    width: 80%;
+
 }
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  .card:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 .card-img{
     display: flex;
     gap: 5px;
@@ -434,7 +447,7 @@ footer{
     position: relative;
     background: #ffffff;
     width: 70vw;
-    height: 50vh;
+    height: 300px;
     bottom: 0;
     top: 20px;
     margin: 0px;
@@ -514,6 +527,9 @@ footer{
 .icon-post .additems-icons .fa-face-smile{
     color: orange;
 }
+#fileInput {
+    display: none;
+  }
 /*responsiveness*/
 
 @media (max-width: 1024px) {
@@ -566,7 +582,27 @@ footer{
         display: flex;
         justify-content: space-around;
     }
-
+    .feeds {
+        max-height: 100vh; /* Adjust this value based on your design */
+        overflow-y:auto;
+    }
+    
+    .card {
+    
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin: 20px;
+        width: 100%;
+    
+    }
+    
+      .card:active {
+        transform: scale(1.02);
+       
+      }
     #sidebar {
         display: none;
         transition:  0.3s ease-in-out;
