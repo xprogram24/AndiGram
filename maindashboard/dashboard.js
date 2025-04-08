@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         feedImg.appendChild(feedText);
         feedImg.appendChild(feedImage);
-
+//rewrite icons code to allow indivdual link for save and like
         const feedIcons = document.createElement("div");
 feedIcons.className = "feed-icons";
 
@@ -126,8 +126,6 @@ const iconData = [
 
 const iconStates = {
   likes: false,
-  share: false,
-  comment: false,
   save: false
 };
 
@@ -164,10 +162,7 @@ for (const [iconClass, label] of iconData) {
 }
 
 // Append to your target container
-document.body.appendChild(feedIcons); // Change to your actual container if needed
-
-
-        
+document.body.appendChild(feedIcons);
 
         const comment1 = document.createElement("div");
         comment1.classList.add("comment1");
@@ -284,7 +279,7 @@ Close.addEventListener('click', function(){
 })
 
 //upload click test
-const icon = document.getElementById('triggerUpload');
+/*const icon = document.getElementById('triggerUpload');
 const fileinput = document.getElementById('fileInput')
 
 icon.addEventListener('click',() => {
@@ -298,3 +293,64 @@ fileinput.addEventListener('change', () => {
         
     }
 })
+*/
+const triggerIcon = document.getElementById('triggerUpload');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const uploadBtn = document.getElementById('uploadBtn');
+  
+    let selectedFile = null;
+  
+    // Click icon => trigger hidden file input
+    triggerIcon.addEventListener('click', () => {
+      fileInput.click();
+    });
+  
+    // Show preview when a file is selected
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+  
+      if (file && file.type.startsWith('image/')) {
+        selectedFile = file; // Save for upload
+  
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert("Please select a valid image file.");
+        preview.style.display = 'none';
+        selectedFile = null;
+      }
+    });
+  
+    // Upload file using fetch + FormData
+    uploadBtn.addEventListener('click', async () => {
+      if (!selectedFile) {
+        alert("No file selected!");
+        return;
+      }
+  
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+  
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+          method: 'POST',
+          body: formData
+        });
+  
+        if (!response.ok) {
+          throw new Error("Upload failed!");
+        }
+  
+        const result = await response.json();
+        alert("Upload successful!");
+        console.log("Server Response:", result);
+      } catch (error) {
+        alert("Something went wrong.");
+        console.error(error);
+      }
+    });

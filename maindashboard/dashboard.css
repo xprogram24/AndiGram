@@ -239,7 +239,7 @@ main{
     transition: all 0.3s ease;
     margin: 40px;
     width: 80%;
-
+    
 }
 .card:hover {
     transform: scale(1.02);
@@ -287,7 +287,7 @@ main{
 
 .feed-icons {
     display: flex;
-    justify-content: left;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 10px;
     margin-left: 5px;
@@ -297,9 +297,10 @@ main{
     margin-top: 10px;
     display: flex;
     gap: 5px;
+    transform: scale(1.1);
 }
 .lcss-icon:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: decor 1s ease-in-out ;
 
 }
@@ -434,7 +435,7 @@ footer{
     backdrop-filter: blur(10px);
     opacity: 1  ;
     transition: .3s ease;
-    display: none;/*return to none when completes*/
+    display: flex;/*return to none when completed*/
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -447,7 +448,7 @@ footer{
     position: relative;
     background: #ffffff;
     width: 70vw;
-    height: 300px;
+    min-height: 300px;
     bottom: 0;
     top: 20px;
     margin: 0px;
@@ -465,13 +466,14 @@ footer{
     right: 15px;
     transform: scale(1.1);
 }
-.addpost-modal-body img{
+#additemhead-img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
     cursor: pointer;
     
 }
+
 .additems{
     display: flex;
     justify-content:space-between;
@@ -530,6 +532,12 @@ footer{
 #fileInput {
     display: none;
   }
+ #preview{
+    display: none;
+     max-width: 400px; 
+     margin-top: 10px;
+    
+}
 /*responsiveness*/
 
 @media (max-width: 1024px) {
@@ -700,7 +708,7 @@ footer{
     }
     .addpost-modal-body{
         width: 90vw;
-        height: 200px;
+        min-height: 200px;
         bottom: 0;
         top: 10px;
         padding: 25px;
@@ -714,6 +722,7 @@ footer{
         border-radius: 25px;
         cursor: pointer;
      }
+     
 }
 @media (max-width: 425px) {
     #sidebar{
@@ -749,7 +758,7 @@ footer{
         padding: 25px;
         border-radius: 16px;
         transition: all 0.3s ease;
-        box-shadow: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         margin: 40px;
         width: 94%;
     
@@ -757,7 +766,7 @@ footer{
     
       .card:active {
         transform: scale(0.98);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 6px #4174f5;
       }
     .comment-section textarea {
         width: 100%;
@@ -796,7 +805,7 @@ footer{
     .addpost-modal-body{
 
         width: 90vw;
-        height: 200px;
+        min-height: 200px;
         bottom: 0;
         top: 10px;
         padding: 25px;
@@ -854,6 +863,19 @@ footer{
        border-radius: 25px;
        cursor: pointer;
     }
+    .feed-icons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 5px;
+        margin-left: 5px;
+        gap: 20px;
+    }
+    .lcss-icon{
+        margin-top: 5px;
+        display: flex;
+        gap: 5px;
+    }
 }
 @media (max-width: 320px){
     .newpostBtn{
@@ -866,7 +888,7 @@ footer{
     }
     .addpost-modal-body{
         width: 90vw;
-        height: 200px;
+        min-height: 200px;
         bottom: 0;
         top: 10px;
         padding: 25px;
