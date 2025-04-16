@@ -294,11 +294,11 @@ fileinput.addEventListener('change', () => {
     }
 })
 */
-const triggerIcon = document.getElementById('triggerUpload');
+    const triggerIcon = document.getElementById('triggerUpload');
     const fileInput = document.getElementById('fileInput');
     const preview = document.getElementById('preview');
     const uploadBtn = document.getElementById('uploadBtn');
-  
+                                                                                                                                                                                                                                                                                                                                           
     let selectedFile = null;
   
     // Click icon => trigger hidden file input
@@ -353,4 +353,4 @@ const triggerIcon = document.getElementById('triggerUpload');
         alert("Something went wrong.");
         console.error(error);
       }
-    });
+    });                                         

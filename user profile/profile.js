@@ -7,28 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const editModal = document.querySelector(".edit-profile-modal");
     const saveProfile = document.getElementById("save-profile");
     const closeModal = document.getElementById("close-modal");
-
+    //function loadProfile() {
+    
     // Load profile from localStorage
-    function loadProfile() {
-        const storedUsername = localStorage.getItem("username");
-        const storedfullname = localStorage.getItem('fullname')
-        const storedBio = localStorage.getItem("bio");
-        const storedpic = localStorage.getItem('profilepic')
+    /*const storedUsername = localStorage.getItem("username");
+    const storedfullname = localStorage.getItem('fullname')
+    const storedBio = localStorage.getItem("bio");
+    const storedpic = localStorage.getItem('profilepic')
 
-        if (storedUsername) username.textContent = storedUsername;
+    if (storedUsername) username.textContent = storedUsername;
         if (storedfullname) fullname.textContent = storedfullname;
         if (storedBio) bio.textContent = storedBio;
-        if (storedpic) profilePic.innerHTML = 'storedpic';
-    }
+        //if (storedpic) profilePic.innerHTML = 'storedpic';
+    }*/
 
-    loadProfile();
+    //loadProfile();
 
     // Show modal
-    editBtn.addEventListener("click", function () {
+    /*editBtn.addEventListener("click", function () {
         editModal.style.display = 'flex';
     });
 
-    // Close modal
+    Close modal
     closeModal.addEventListener("click", function () {
         editModal.style.display = 'none';
     });
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault()
         const newUsername = document.getElementById("edit-username").value;
         const newBio = document.getElementById("edit-bio").value;
-        const newpic = document.getElementById('edit-profilepic')
+        //const newpic = document.getElementById('edit-profilepic')
         const newfullname = document.getElementById('edit-fullname').value
 
         if (newUsername) {
@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("bio", newBio);
             bio.textContent = newBio;
         }
-       /* if (newpic) {
+        if (newpic) {
             localStorage.setItem("profilepic",newpic)
             newpic.textContent = newpic;
-        }*/
+        }
 
         if (newfullname) {
             localStorage.setItem("fullname",newfullname)
@@ -62,7 +62,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
         editModal.style.display="hidden";
 
-        window.location.href = "../maindashboard/dashboard.html";
+        //window.location.href = "../maindashboard/dashboard.html";
 
     });
+
+
+    let profileimg =  document.getElementById('profilepic')
+}*/
+
+let profilepicedit = document.getElementById('edit-profilepic')
+let selectedFile = null
+
+function imgtest(){
+    profilepicedit.addEventListener('change', () =>{
+        const file = profilepicedit.files[0];
+
+        if(file && file.type.startsWith('image/')){
+            selectedFile = file
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                profilePic.src = e.target.result;//base64 encoded image
+            };
+
+            reader.readAsDataURL(file)
+        }
+        else{
+            alert('select a valid image file')
+            
+            selectedFile = null;
+        }
+    })
+}
+imgtest()
+    saveProfile.addEventListener('click', (e)=>{
+        e.preventDefault()
+      
+           
+            
+        
+        editModal.style.display="none";
+    })
+
+
+closeModal.addEventListener("click", function () {
+        editModal.style.display = 'none';
+    });
+
+    editBtn.addEventListener("click", function () {
+        editModal.style.display = 'flex';
+    });
+
+
 });
