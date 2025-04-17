@@ -489,7 +489,7 @@ footer{
 .additems .hr{
     height: 2px;
     background-color: rgb(185, 180, 180);
-    width: px;
+   
     transform: rotate(90deg);
     position: relative;
     border: 7px solid #545455;
@@ -818,7 +818,11 @@ footer{
         right: 15px;
         opacity: 0.5;
     }
+<<<<<<< HEAD
   
+=======
+    
+>>>>>>> 3391bf7d07ecf915a49bc60386610ee254ac1e5b
     .additems{
         gap: 2em;
     }
@@ -876,7 +880,11 @@ footer{
         margin-top: 5px;
         display: flex;
         gap: 5px;
-    }
+    }#preview{
+        max-width: 400px; 
+        margin-top: 10px;
+       
+   }
 }
 @media (max-width: 320px){
     .newpostBtn{
@@ -894,5 +902,9 @@ footer{
         top: 10px;
         padding: 25px;
         border-radius: 10px;
-    }
+    }#preview{
+        max-width: 400px; 
+        margin-top: 10px;
+       
+   }
 }
