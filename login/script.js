@@ -145,7 +145,7 @@ submitButton.addEventListener('click', function(e){
        let storedUser = JSON.parse(localStorage.getItem(email.value))
         if (storedUser && storedUser.password == password.value || password.value == userPassword && email.value == usersEmail) {
             
-           window.location.href = "maindashboard/dashboard.html";
+           window.location.href = "../maindashboard/dashboard.html";
           
         }
          else{

@@ -55,7 +55,7 @@ let logoutbtn = document.getElementById('logout')
 
 logoutbtn.addEventListener('click',function(){
     
-    window.location.href = '/index.html';
+    window.location.href = '../login/index.html';
 })
 //creates  the infinite scroll
 document.addEventListener("DOMContentLoaded", function () {
