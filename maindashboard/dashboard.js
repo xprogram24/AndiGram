@@ -302,55 +302,71 @@ fileinput.addEventListener('change', () => {
     let selectedFile = null;
   
     // Click icon => trigger hidden file input
-    triggerIcon.addEventListener('click', () => {
-      fileInput.click();
-    });
-  
-    // Show preview when a file is selected
-    fileInput.addEventListener('change', () => {
-      const file = fileInput.files[0];
-  
-      if (file && file.type.startsWith('image/')) {
-        selectedFile = file; // Save for upload
-  
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          preview.src = e.target.result;
-          preview.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-      } else {
-        alert("Please select a valid image file.");
-        preview.style.display = 'none';
-        selectedFile = null;
+   // Click icon => trigger hidden file input
+triggerIcon.addEventListener('click', () => {
+  fileInput.click();
+});
+
+// Show preview when a file is selected
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+
+  if (file && file.type.startsWith('image/')) {
+    selectedFile = file; // Save for upload
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  } else {
+    alert("Please select a valid image file.");
+    preview.style.display = 'none';
+    selectedFile = null;
+  }
+});
+
+// Upload file as JSON
+uploadBtn.addEventListener('click', async () => {
+  if (!selectedFile) {
+    alert("No file selected!");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = async (e) => {
+    const base64Image = e.target.result; // Base64 encoded image
+
+    // Create JSON payload
+    const payload = {
+      image: base64Image,
+      filename: selectedFile.name,
+      type: selectedFile.type,
+    };
+
+    try {
+      const response = await fetch('https://fake-json-api.mock.beeceptor.com/posts', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Upload failed!");
       }
-    });
-  
-    // Upload file using fetch + FormData
-    uploadBtn.addEventListener('click', async () => {
-      if (!selectedFile) {
-        alert("No file selected!");
-        return;
-      }
-  
-      const formData = new FormData();
-      formData.append('file', selectedFile);
-  
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users', {
-          method: 'POST',
-          body: formData
-        });
-  
-        if (!response.ok) {
-          throw new Error("Upload failed!");
-        }
-  
-        const result = await response.json();
-        alert("Upload successful!");
-        console.log("Server Response:", result);
-      } catch (error) {
-        alert("Something went wrong.");
-        console.error(error);
-      }
-    });                                         
+
+      const result = await response.json();
+      alert("Upload successful!");
+      console.log("Server Response:", result);
+    } catch (error) {
+      alert("Something went wrong.");
+      console.error(error);
+    }
+  };
+
+  reader.readAsDataURL(selectedFile); // Convert image to Base64
+});
