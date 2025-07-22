@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         feedText.textContent = "This is a new post added dynamically.";
 
         const feedImage = document.createElement("img");
-        feedImage.src = "/images/feed image.jpg";
+        feedImage.src = "../images/feed image.jpg";
         feedImage.alt = "feed image";
         feedImage.classList.add("feed-img");
 
